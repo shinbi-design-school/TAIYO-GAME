@@ -2,14 +2,14 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image:url('images/door3.png');
+    background-image:url('images/active_door.png');
     background-size: 1250px;
     background-position: center 10px;
     background-repeat: no-repeat;
 }
 
 .over{
-    background-image:url('images/over.jpg');
+    background-image:url('images/game_over.jpg');
     background-size: 1000px;
     background-position: center 10px;
     background-repeat: no-repeat;
