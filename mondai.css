@@ -3,13 +3,14 @@
     font-family: Arial, sans-serif;
     text-align: center;
     background-image:url('images/active_door.png');
+    background-image:url('materials/haikei3.png');
     background-size: 1300px;
     background-position: center 10px;
     background-repeat: no-repeat;
 }
 
 .over{
-    background-image:url('sotugyou/over2.png');
+    background-image:url('materials/over2.png');
     background-size: 1000px;
     background-position: center 10px;
     background-repeat: no-repeat;
@@ -22,7 +23,7 @@
 }
 
 .kuria{
-    background-image:url('sotugyou/kuria.png');
+    background-image:url('materials/kuria.png');
     background-size: 1300px;
     background-position: center 10px;
     background-repeat: no-repeat;
@@ -39,7 +40,7 @@
 }
 
 .top{
-    background-image:url('sotugyou/top.png');
+    background-image:url('materials/top.png');
     background-size: 1400px;
     background-position: center 10px;
     background-repeat: no-repeat;
@@ -54,7 +55,12 @@
 }
 
 .button-container {
-    margin: 20px 50px 20px 100px;
+    position: relative;
+        text-align: center;
+        margin-top: 10vh; /* 画面の垂直中央から下に40%移動 */
+        transform: translateY(-50%);
+        margin-right: 80px; /* ボタンを左に80px移動 */
+        
 }
 
 h1{
