@@ -61,7 +61,7 @@
         margin-right: 80px; /* ボタンを左に80px移動 */
         
 }
-.button {
+.button .choices {
         padding: 15px 30px;
         font-size: 18px;
         background-color: #4b0082; /* 暗い紫色 */
@@ -75,7 +75,7 @@
         transition: all 0.3s ease; /* ホバー時のアニメーション */
     }
     
-    .button:hover {
+    .button:hover .choices {
         background-color: #ffd700; /* ホバー時の背景色 */
         color: #4b0082; /* ホバー時の文字色 */
         border-color: #4b0082; /* ホバー時の枠線 */
