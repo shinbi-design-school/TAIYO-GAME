@@ -82,7 +82,9 @@
         transform: scale(1.1); /* ホバー時の拡大アニメーション */
     }
     
-    
+    /*
+    question変更点
+    */
     .choices {
     background-color: #4b0082; /* 暗い紫色 */
         color: #ffd700; /* 金色 */
