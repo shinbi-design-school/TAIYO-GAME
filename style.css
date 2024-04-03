@@ -61,7 +61,7 @@
         margin-right: 80px; /* ボタンを左に80px移動 */
         
 }
-.button .choices {
+.button  {
         padding: 15px 30px;
         font-size: 18px;
         background-color: #4b0082; /* 暗い紫色 */
@@ -75,12 +75,31 @@
         transition: all 0.3s ease; /* ホバー時のアニメーション */
     }
     
-    .button:hover .choices {
+    .button:hover  {
         background-color: #ffd700; /* ホバー時の背景色 */
         color: #4b0082; /* ホバー時の文字色 */
         border-color: #4b0082; /* ホバー時の枠線 */
         transform: scale(1.1); /* ホバー時の拡大アニメーション */
     }
+    
+    
+    .choices {
+    background-color: #4b0082; /* 暗い紫色 */
+        color: #ffd700; /* 金色 */
+        border: 2px solid #ffd700; /* 金色の枠線 */
+        border-radius: 25px; /* 角丸 */
+        cursor: pointer;
+        text-transform: uppercase; /* 文字を大文字に */
+        letter-spacing: 1px; /* 文字の間隔を広げる */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加 */
+        transition: all 0.3s ease; /* ホバー時のアニメーション */
+    }
+  .choices:hover {
+    background-color: #ffd700; /* ホバー時の背景色 */
+        color: #4b0082; /* ホバー時の文字色 */
+        border-color: #4b0082; /* ホバー時の枠線 */
+        transform: scale(1.1); /* ホバー時の拡大アニメーション */
+  }
 h1{
     color: rgb(223, 231, 237);
     margin-top: 150px;
