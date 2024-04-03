@@ -90,10 +90,14 @@ h1{
     font-size: 50px;
 }
 p{
-    font-size: 23px;
+    color: white;
+    font-size: 25px;
     font-weight: 800;
-    text-shadow: 5px 5px 8px rgb(0, 0, 0);
-    color: rgb(216, 218, 77);
+    text-shadow:
+      3px 0px 1px rgb(70, 57, 3),
+      0 0 5em rgb(160, 127, 17),
+      0 0 0.5em rgb(233, 192, 58);
+    
 }
 
 #quiz-container {
