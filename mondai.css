@@ -3,14 +3,13 @@
     font-family: Arial, sans-serif;
     text-align: center;
     background-image:url('images/active_door.png');
-    background-image:url('materials/haikei3.png');
     background-size: 1300px;
     background-position: center 10px;
     background-repeat: no-repeat;
 }
 
 .over{
-    background-image:url('materials/over2.png');
+    background-image:url('images/game_over.jpg');
     background-size: 1000px;
     background-position: center 10px;
     background-repeat: no-repeat;
@@ -23,7 +22,7 @@
 }
 
 .kuria{
-    background-image:url('materials/kuria.png');
+    background-image:url('images/clear.png');
     background-size: 1300px;
     background-position: center 10px;
     background-repeat: no-repeat;
@@ -40,7 +39,7 @@
 }
 
 .top{
-    background-image:url('materials/top.png');
+    background-image:url('images/active_door.png');
     background-size: 1400px;
     background-position: center 10px;
     background-repeat: no-repeat;
