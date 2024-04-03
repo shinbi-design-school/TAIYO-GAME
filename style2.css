@@ -1,0 +1,73 @@
+
+body {
+    color:white ;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image:url('images/active_door.png');
+    background-size: 1250px;
+    background-position: center 10px;
+    background-repeat: no-repeat;
+    font-weight: 800;
+    text-shadow:
+      3px 0px 1px rgb(70, 57, 3),
+      0 0 5em rgb(160, 127, 17),
+      0 0 0.5em rgb(233, 192, 58);
+}
+
+.over{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.666),rgba(0, 0, 0, 0.666)),url(images/active_door.png);
+    background-size: 1250px 80%;
+    background-position: center top;
+    background-repeat: no-repeat;
+     width: 100%;
+     height: 100vh;
+     color: white;
+    font-size: 30px;
+    font-weight: 800;
+    text-shadow:
+      3px 0px 1px rgb(70, 57, 3),
+      0 0 5em rgb(160, 127, 17),
+      0 0 0.5em rgb(233, 192, 58); 
+    
+}
+
+.clear{
+    background-image:url('images/clear.png');
+    background-size: 1250px;
+    background-position: center 10px;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    margin-top: 150px;
+}
+.rule {
+    color: rgb(75, 58, 2);
+    font-size: 40px;
+    text-shadow:
+      3px 3px 5px rgb(230, 230, 200),
+      0 0 10em rgb(230, 190, 50),
+      0 0 2em rgb(233, 190, 50);
+}
+
+p{
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+    text-shadow:
+      3px 0px 1px rgb(70, 57, 3),
+      0 0 5em rgb(160, 127, 17),
+      0 0 0.5em rgb(233, 192, 58);
+    
+}
+
+#quiz-container {
+    margin: 50px auto;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 160px 22px;
+    font-size: 16px;
+    cursor: pointer;
+}
