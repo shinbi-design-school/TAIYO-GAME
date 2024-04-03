@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クイズゲーム</title>
+    <link rel="stylesheet" href="mondai.css">
+</head>
+<body class="body">
+    <div id="quiz-container">
+        <h1 id="question">問題文</h1>
+        <div id="choices">
+            <button class="sentaku" id="choiceA" onclick="checkAnswer('A')">選択肢A</button>
+            <button class="sentaku" id="choiceB" onclick="checkAnswer('B')">選択肢B</button>
+            <button class="sentaku" id="choiceC" onclick="checkAnswer('C')">選択肢C</button>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+        {question: "問題1",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+             {
+                question: "問題2",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題3",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題4",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題5",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題6",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題7",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題8",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題9",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題10",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題11",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題12",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題13",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題14",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題15",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題16",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題17",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題18",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            {
+                question: "問題19",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+            
+            {
+                question: "問題20",
+                choices: {
+                    A: "Aの選択肢について",
+                    B: "Bの選択肢について",
+                    C: "Cの選択肢について"
+                },
+                correctAnswer: "A"
+            },
+        ];
+
+        let currentQuizIndex = 0;
+        let score = 0;
+        let wrongCount = 0;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            displayQuiz();
+        });
+
+        function displayQuiz() {
+            if (currentQuizIndex >= 5) {
+                alert("クイズが終了しました。");
+                return;
+            }
+
+            const currentQuiz = quizData[currentQuizIndex];
+            document.getElementById("question").textContent = currentQuiz.question;
+            document.getElementById("choiceA").textContent = currentQuiz.choices.A;
+            document.getElementById("choiceB").textContent = currentQuiz.choices.B;
+            document.getElementById("choiceC").textContent = currentQuiz.choices.C;
+
+            // 選択肢を有効化
+            document.querySelectorAll("#choices button").forEach(button => {
+                button.disabled = false;
+            });
+        }
+
+        function checkAnswer(selectedChoice) {
+            const currentQuiz = quizData[currentQuizIndex];
+            if (selectedChoice === currentQuiz.correctAnswer) {
+                alert("正解です！");
+                score++;
+                // 次の問題へ
+                currentQuizIndex++;
+                displayQuiz();
+                wrongCount = 0; // 正解したら間違えた回数をリセット
+            } else {
+                alert("不正解です。");
+                wrongCount++;
+                if (wrongCount >= 3) { // 3回以上間違えた場合
+                    alert("3回間違えたため、次の問題に進みます。");
+                    currentQuizIndex++;
+                    displayQuiz();
+                    wrongCount = 0; // 間違えた回数をリセット
+                }
+            }
+        }
+    </script>
+</body>
+</html>
