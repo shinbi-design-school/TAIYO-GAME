@@ -116,21 +116,33 @@ p{
     margin: 50px auto;
 }
  /* question */
+ #options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px; /* 解答ボタンの幅を固定 */
+}
+
 #options button {
-    padding: 10px 15px;
-    margin: 340px;
+    flex: 1; /* ボタンの幅を均等に分配 */
+    margin: 0 30px; /* ボタン間のマージン */
+    padding: 20px 20px;
     font-size: 16px;
     cursor: pointer;
-     background-color: #4b0082; /* 暗い紫色 */
-        color: #ffd700; /* 金色 */
-        border: 2px solid #ffd700; /* 金色の枠線 */
-        border-radius: 25px; /* 角丸 */
-        cursor: pointer;
-        text-transform: uppercase; /* 文字を大文字に */
-        letter-spacing: 1px; /* 文字の間隔を広げる */
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加 */
-        transition: all 0.3s ease; /* ホバー時のアニメーション */
+    background-color: #4b0082;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
+
 button:hover{
    background-color: #ffd700; /* ホバー時の背景色 */
         color: #4b0082; /* ホバー時の文字色 */
