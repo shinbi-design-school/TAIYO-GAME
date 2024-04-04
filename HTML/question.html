@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>三択問題</title>
 </head>
+
 <body class="body">
     <div id="quiz-container">
         <h2 id="question"></h2>
@@ -21,23 +23,22 @@
         const quizData = [
             ["シンビデザインスクールで開講しているコースはいくつあるか答えよ", "1", "2", "3", "2"],
             ["ちとせ先生が開講している就職支援の授業名を答えよ", "印象戦略", "印象戦術", "外観主義", "印象戦略"],
-            ["田中先生の下の名前を答えよ","剛","相","聡","聡"],
-            ["シンビWEBサイトにて紹介されている就職サポートは主に4つ存在する、個別面談、企業説明会、面接対策、残り一つはどれか","就活指導","就職指導","第二印象","就活指導"],
-            ["Java・Webプログラミング科で習得できると紹介されている資格はJavaプログラミング能力認定試験2級ともう一つあるが、それは次のうちどれか","基本情報技術者","WEBクリエーター能力認定試験","ITパスポート","WEBクリエーター能力認定試験"],
-            ["シンビデザインスクールの1番近くにあるスーパーの名前を答えよ","ツルハ","スギ薬局","マツモトキヨシ","ツルハ"],
-            ["シンビデザインスクールのプログラミングの先生の数を答えよ","5","10","6","5"],
-            ["シンビがインスタで使っているアカウント名を答えよ","シンビデザインスクール","SHINBIデザインスクール","SHINBIデザイン","SHINBIデザインスクール"],
-            ["シンビデザインスクールにある部活の数を答えよ","5","7","3","5"],
-            ["シンビデザインスクールの教室の数を答えよ","4","3","6","6"],
-            ["臼井先生の下の名前を答えよ","八千代","美千代","美咲","美千代"],
-            ["シンビデザインスクールの校長の名前を答えよ","佐藤","床井","小野","床井"],
-            ["シンビの目標で、何をサポートする職業訓練校と言っているか","愛","希望","夢","夢"],
-            ["田中先生のももクロの推しを答えよ","夏菜子","彩夏","詩織","夏菜子"],
-            ["臼井先生のシンビでの担当を答えよ","WEBデザイン","Java","SQL","WEBデザイン"],
-            ["田中先生が担当している部活の名前を答えよ","ダンス部","発表部","スピーチ部","スピーチ部"],
-            ["高野先生が作ろうとしている部活の名前を答えよ","コード部","麻雀部","写真部","写真部"],
-            ["三大ホルモンのうち目標達成の時に出るものを答えよ","オキシトシン","ドーパミン","セロトニン","ドーパミン"],
-            ["ちとせ先生が言っていた「ビジネスとは〇〇だ」〇〇に入る言葉を答えよ","戦略","価値提供","印象戦略","価値提供"],
+            ["田中先生の下の名前を答えよ", "剛", "相", "聡", "聡"],
+            ["シンビWEBサイトにて紹介されている就職サポートは主に4つ存在する、個別面談、企業説明会、面接対策、残り一つはどれか", "就活指導", "就職指導", "第二印象", "就活指導"],
+            ["Java・Webプログラミング科で習得できると紹介されている資格はJavaプログラミング能力認定試験2級ともう一つあるが、それは次のうちどれか", "基本情報技術者", "WEBクリエーター能力認定試験", "ITパスポート", "WEBクリエーター能力認定試験"],
+            ["シンビデザインスクールの1番近くにあるスーパーの名前を答えよ", "ツルハ", "スギ薬局", "マツモトキヨシ", "ツルハ"],
+            ["シンビデザインスクールのプログラミングの先生の数を答えよ", "5", "10", "6", "5"],
+            ["シンビデザインスクールにある部活の数を答えよ", "5", "7", "3", "5"],
+            ["シンビデザインスクールの教室の数を答えよ", "4", "3", "6", "6"],
+            ["臼井先生の下の名前を答えよ", "八千代", "美千代", "美咲", "美千代"],
+            ["シンビデザインスクールの校長の名前を答えよ", "佐藤", "床井", "小野", "床井"],
+            ["シンビの目標で、何をサポートする職業訓練校と言っているか", "愛", "希望", "夢", "夢"],
+            ["田中先生のももクロの推しを答えよ", "夏菜子", "彩夏", "詩織", "夏菜子"],
+            ["臼井先生のシンビでの担当を答えよ", "WEBデザイン", "Java", "SQL", "WEBデザイン"],
+            ["田中先生が担当している部活の名前を答えよ", "ダンス部", "発表部", "スピーチ部", "スピーチ部"],
+            ["高野先生が作ろうとしている部活の名前を答えよ", "コード部", "麻雀部", "写真部", "写真部"],
+            ["三大ホルモンのうち目標達成の時に出るものを答えよ", "オキシトシン", "ドーパミン", "セロトニン", "ドーパミン"],
+            ["ちとせ先生が言っていた「ビジネスとは〇〇だ」〇〇に入る言葉を答えよ", "戦略", "価値提供", "印象戦略", "価値提供"],
         ];
 
         const quizContainer = document.getElementById('quiz-container');
@@ -48,6 +49,7 @@
         let currentQuestionIndex = 0;
         let score = 0;
         let wrongAttempts = 0;
+        let askedQuestions = [];
 
         function shuffleArray(array) {
             for (let i = array.length - 1; i > 0; i--) {
@@ -58,34 +60,35 @@
         }
 
         function showQuestion() {
-            const shuffledQuizData = shuffleArray(quizData);
-            const currentQuestion = shuffledQuizData[currentQuestionIndex];
+            const shuffledQuizData = shuffleArray(quizData.filter((_, index) => !askedQuestions.includes(index)));
+            const currentQuestion = shuffledQuizData[0];
             questionElement.textContent = currentQuestion[0];
             optionsElement.innerHTML = '';
             for (let i = 1; i <= 3; i++) {
                 const option = document.createElement('button');
                 option.textContent = currentQuestion[i];
-                option.onclick = function() {
+                option.onclick = function () {
                     checkAnswer(option.textContent);
                 };
                 optionsElement.appendChild(option);
             }
+            askedQuestions.push(quizData.indexOf(currentQuestion));
         }
 
         function checkAnswer(answer) {
-            const currentQuestion = quizData[currentQuestionIndex];
+            const currentQuestion = quizData[askedQuestions[askedQuestions.length - 1]];
             const correctAnswer = currentQuestion[4];
             if (answer === correctAnswer) {
                 score++;
                 alert('正解！');
-                wrongAttempts = 0; 
+                wrongAttempts = 0;
             } else {
                 wrongAttempts++;
                 alert('不正解。');
-                if (wrongAttempts === 3) { 
-                    wrongAttempts = 0; 
+                if (wrongAttempts === 3) {
+                    wrongAttempts = 0;
                 } else {
-                    return; // 不正解時はこの問題にとどま
+                    return;
                 }
             }
 
@@ -94,7 +97,7 @@
                 showQuestion();
             } else {
                 if (score >= 5) {
-                    window.location.href = 'clear.html'; 
+                    window.location.href = 'clear.html';
                 } else {
                     quizContainer.innerHTML = `<h2>クイズ終了！</h2>`;
                 }
@@ -104,4 +107,5 @@
         showQuestion();
     </script>
 </body>
+
 </html>
