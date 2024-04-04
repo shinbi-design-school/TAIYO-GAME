@@ -49,9 +49,9 @@
         const optionsElement = document.getElementById('options');
         const resultElement = document.getElementById('result');
 
-        let currentQuestionIndex = 0;
-        let score = 0;
-        let wrongAttempts = 0;
+        let currentQuestionIndex = 0; //問題のID
+        let score = 0; //正解した数
+        let wrongAttempts = 0; //間違えた数
         let remainingKeys = 8; // 鍵の本数の初期数
 
         function shuffleArray(array) {
@@ -62,11 +62,12 @@
             return array;
         }
 
+        // 鍵の本数を更新する
         function updateRemainingKeys() {
             document.getElementById('remainingKeys').innerText = '鍵の本数: ' + remainingKeys;
         }
 
-
+        //問題の表示
         function showQuestion() {
             const shuffledQuizData = shuffleArray(quizData);
             const currentQuestion = shuffledQuizData[currentQuestionIndex];
@@ -82,6 +83,7 @@
             }
         }
 
+        //問題の正誤判定
         function checkAnswer(answer) {
             const currentQuestion = quizData[currentQuestionIndex];
             const correctAnswer = currentQuestion[4];
@@ -97,9 +99,10 @@
                 if (wrongAttempts === 3) {
                     wrongAttempts = 0;
                 } else {
-                    return; // 不正解時はこの問題にとどま
+                    return; // 不正解時はこの問題にとどまる
                 }
             }
+            // ５問正解でクリアと表示
             currentQuestionIndex++;
             if (currentQuestionIndex < quizData.length && score < 5) {
                 showQuestion();
@@ -111,9 +114,9 @@
                 }
             }
 
-            // 問題を回答した場合、鍵の本数を減らす
+            // 間違えの選択肢を選択した場合、鍵の本数を減らす
             document.getElementById('options').addEventListener('click', function () {
-               
+
                 updateRemainingKeys();
 
                 if (remainingKeys <= 0) {
