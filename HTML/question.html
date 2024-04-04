@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../../../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>三択問題</title>
 </head>
 
@@ -105,7 +105,7 @@
                 showQuestion();
             } else {
                 if (score >= 5) {
-                    window.location.href = '../../../../../../HTML/clear.html';
+                    window.location.href = '../HTML/clear.html';
                 } else {
                     quizContainer.innerHTML = `<h2>クイズ終了！</h2>`;
                 }
@@ -117,9 +117,8 @@
                 updateRemainingKeys();
 
                 if (remainingKeys <= 0) {
-                    // 鍵が0本になったらメッセージを表示して3秒後にGAMEOVERページにリダイレクト
                     setTimeout(function () {
-                        window.location.href = '../../../../../../HTML/game_over.html';
+                        window.location.href = '../HTML/game_over.html';
                     },/*3000*/); // 3秒後にGAMEOVERページにリダイレクトここの数字変えたらできる。
                 }
             });
