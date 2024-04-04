@@ -118,7 +118,7 @@ p{
  /* question */
 #options button {
     padding: 10px 15px;
-    margin: 160px 22px;
+    margin: 340px;
     font-size: 16px;
     cursor: pointer;
      background-color: #4b0082; /* 暗い紫色 */
@@ -136,6 +136,15 @@ button:hover{
         color: #4b0082; /* ホバー時の文字色 */
         border-color: #4b0082; /* ホバー時の枠線 */
         transform: scale(1.1); /* ホバー時の拡大アニメーション */
+}
+#select1{
+	margin: 65px;
+}
+#select2{
+	margin: 65px;
+}
+#select3{
+	margin: 65px;
 }
  /* rule */
 .button2{
