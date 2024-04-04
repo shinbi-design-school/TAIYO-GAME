@@ -52,6 +52,7 @@
         let currentQuestionIndex = 0;
         let score = 0;
         let wrongAttempts = 0;
+        let askedQuestions = [];
         let remainingKeys = 8; // 鍵の本数の初期数
 
         function shuffleArray(array) {
@@ -68,8 +69,8 @@
 
 
         function showQuestion() {
-            const shuffledQuizData = shuffleArray(quizData);
-            const currentQuestion = shuffledQuizData[currentQuestionIndex];
+            const shuffledQuizData = shuffleArray(quizData.filter((_, index) => !askedQuestions.includes(index)));
+            const currentQuestion = shuffledQuizData[0];
             questionElement.textContent = currentQuestion[0];
             optionsElement.innerHTML = '';
             for (let i = 1; i <= 3; i++) {
@@ -80,10 +81,11 @@
                 };
                 optionsElement.appendChild(option);
             }
+            askedQuestions.push(quizData.indexOf(currentQuestion));
         }
 
         function checkAnswer(answer) {
-            const currentQuestion = quizData[currentQuestionIndex];
+            const currentQuestion = quizData[askedQuestions[askedQuestions.length - 1]];
             const correctAnswer = currentQuestion[4];
 
             if (answer === correctAnswer) {
