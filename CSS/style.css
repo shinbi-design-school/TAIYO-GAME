@@ -52,7 +52,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
-
+ /* top */
 #button-container {
     position: relative;
         text-align: center;
@@ -115,7 +115,7 @@ p{
 #quiz-container {
     margin: 50px auto;
 }
-
+ /* question */
 #options button {
     padding: 10px 15px;
     margin: 160px 22px;
@@ -137,7 +137,7 @@ button:hover{
         border-color: #4b0082; /* ホバー時の枠線 */
         transform: scale(1.1); /* ホバー時の拡大アニメーション */
 }
-
+ /* rule */
 .button2{
   padding: 10px 15px;
     margin: 160px 22px;
@@ -153,7 +153,7 @@ button:hover{
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加 */
         transition: all 0.3s ease; /* ホバー時のアニメーション */
 }
-
+ /* game over */
 .button3{
    
    padding: 15px 30px;
