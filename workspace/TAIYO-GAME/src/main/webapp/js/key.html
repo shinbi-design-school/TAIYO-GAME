@@ -1,3 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鍵の本数カウンター</title>
+</head>
+<body>
+
+<h1>鍵の本数カウンター</h1>
+
+<p id="remainingKeys">鍵の本数: 3</p>
+
+<!-- 問題を表示する要素 -->
+<div id="question">
+  <h2>質問1</h2>
+  <p>これはテスト問題です。</p>
+  <button id="submitAnswerBtn">回答する</button>
+</div>
+
+<script>
 // 初期の鍵の本数
 let remainingKeys = 3;
 
@@ -25,7 +46,7 @@ function displayQuestion(questionNumber) {
       // 鍵が0本になったらメッセージを表示して3秒後にGAMEOVERページにリダイレクト
       questionDiv.innerHTML = '<h2>問題終了</h2><p>鍵がなくなった…</p>';
       setTimeout(function() {
-        window.location.href = 'gameover.html';
+        window.location.href = '../../../../../../HTML/game_over.html';
       }, 3000); // 3秒後にGAMEOVERページにリダイレクト
     } else {
       // 次の問題に進む
@@ -37,3 +58,7 @@ function displayQuestion(questionNumber) {
 
 // 最初の問題を表示
 displayQuestion(1);
+</script>
+
+</body>
+</html>
