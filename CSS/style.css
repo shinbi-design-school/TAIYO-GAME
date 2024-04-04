@@ -124,7 +124,7 @@ p{
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    width: 500px; /* 解答ボタンの幅を固定 */
+    width: 700px; /* 解答ボタンの幅を固定 */
 }
 
 #options button {
