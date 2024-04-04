@@ -62,6 +62,16 @@
         margin-bottom: 100px;
         
 }
+
+.button-container {
+    position: relative;
+        text-align: center;
+        margin-top: 10vh; /* 画面の垂直中央から下に40%移動 */
+        transform: translateY(-50%);
+        margin-right: 80px; /* ボタンを左に80px移動 */
+        margin-bottom: 100px;
+        
+}
 #button-container .button  {
         padding: 15px 30px;
         font-size: 18px;
@@ -129,7 +139,7 @@ button:hover{
 }
 
 .button2{
-	padding: 10px 15px;
+  padding: 10px 15px;
     margin: 160px 22px;
     font-size: 16px;
     cursor: pointer;
@@ -145,7 +155,8 @@ button:hover{
 }
 
 .button3{
-	 padding: 15px 30px;
+   
+   padding: 15px 30px;
         font-size: 18px;
         background-color: #4b0082; /* 暗い紫色 */
         color: #ffd700; /* 金色 */
