@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ルール説明</title>
     <link rel="stylesheet" href="../CSS/style.css">
-     <audio src="../sounds/MusMus-BGM-173.mp3" controls autoplay loop></audio> 
 </head>
 <body class="body">
     <h1 class="rule">ルール説明</h1>
@@ -13,12 +12,13 @@
         クイズに正解すれば、そのドアを開けることができますが、<br>間違えると貴重な鍵が一つ消費されてしまいます。<br>
         鍵を全て使い果たしてしまったら、ゲームオーバーですので、<br>鍵の消費を慎重に考えながらドアを開けてください！</p>
 
-
+<div id="goquestion">
     <button onclick="redirectToPage1()" class="button2">問題に進む</button>
     <script>
         function redirectToPage1() {
             window.location.href = "question.html";
         }
     </script>
+    </div>
 </body>
 </html>
