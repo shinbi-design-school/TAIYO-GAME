@@ -52,8 +52,18 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
-
+ /* top */
 #button-container {
+    position: relative;
+        text-align: center;
+        margin-top: 10vh; /* 画面の垂直中央から下に40%移動 */
+        transform: translateY(-50%);
+        margin-right: 80px; /* ボタンを左に80px移動 */
+        margin-bottom: 100px;
+        
+}
+
+.button-container {
     position: relative;
         text-align: center;
         margin-top: 10vh; /* 画面の垂直中央から下に40%移動 */
@@ -105,10 +115,10 @@ p{
 #quiz-container {
     margin: 50px auto;
 }
-
+ /* question */
 #options button {
     padding: 10px 15px;
-    margin: 160px 22px;
+    margin: 340px;
     font-size: 16px;
     cursor: pointer;
      background-color: #4b0082; /* 暗い紫色 */
@@ -127,9 +137,18 @@ button:hover{
         border-color: #4b0082; /* ホバー時の枠線 */
         transform: scale(1.1); /* ホバー時の拡大アニメーション */
 }
-
+#select1{
+	margin: 65px;
+}
+#select2{
+	margin: 65px;
+}
+#select3{
+	margin: 65px;
+}
+ /* rule */
 .button2{
-	padding: 10px 15px;
+  padding: 10px 15px;
     margin: 160px 22px;
     font-size: 16px;
     cursor: pointer;
@@ -143,9 +162,14 @@ button:hover{
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 影を追加 */
         transition: all 0.3s ease; /* ホバー時のアニメーション */
 }
+#goquestion .button2{
+	margin-top: 10px;
+}
 
+ /* game over */
 .button3{
-	 padding: 15px 30px;
+   
+   padding: 15px 30px;
         font-size: 18px;
         background-color: #4b0082; /* 暗い紫色 */
         color: #ffd700; /* 金色 */
