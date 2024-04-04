@@ -9,9 +9,10 @@
 </head>
 
 <body class="body">
-    <p id="remainingKeys">鍵の本数: 8</p>
+    <p id="remainingKeys">鍵の本数: 8</p> <!--ここの数字も remainingKeysと合わせてね-->
     <div id="quiz-container">
         <h2 id="question"></h2>
+        <!--ボタンの機構-->
         <div id="options">
             <button onclick="checkAnswer('A')" class="sentaku">A</button>
             <button onclick="checkAnswer('B')" class="sentaku">B</button>
@@ -89,7 +90,6 @@
                 score++;
                 alert('正解！');
                 wrongAttempts = 0;
-                remainingKeys--;
             } else {
                 wrongAttempts++;
                 alert('不正解。');
