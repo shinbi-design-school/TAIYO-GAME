@@ -28,12 +28,12 @@
     background-repeat: no-repeat;
 }
 .clear2{
-    color: rgb(41, 105, 3);
+    color:yellow;
     font-size: 130px;
     text-align: center;
     text-shadow:
-      3px 0px 1px white,
-      0 0 5em rgb(248, 248, 235),
+      3px 0px 1px rgb(248, 244, 238),
+      0 0 5em rgb(65, 65, 2),
       0 0 0.5em rgb(233, 192, 58);
 }
 
