@@ -17,7 +17,12 @@
     <button onclick="redirectToPage1()" class="button2">問題に進む</button>
     <script>
         function redirectToPage1() {
+       // 音声ファイルの再生
+        const audio1 = new Audio('../audio/ruledoor.mp3');
+        audio1.play();
+         setTimeout(() => {
             window.location.href = "../workspace/TAIYO-GAME/src/main/webapp/js/test.html";
+             }, 1500); // 1.5秒
         }
     </script>
     </div>

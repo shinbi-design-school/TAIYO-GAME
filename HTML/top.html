@@ -17,13 +17,13 @@
    <script>
     function redirectToPage1() {
         // 音声ファイルの再生
-        const audio1 = new Audio('../audio/decision.mp3');
+        const audio1 = new Audio('../audio/dooropen.mp3');
         audio1.play();
         
-        // 0.5秒後にページを移動
+        // 3秒後にページを移動
         setTimeout(() => {
             window.location.href = "rule.html";
-        }, 500); // 0.5秒 = 500ミリ秒
+        }, 3000); // 3秒 
     }
 </script>
 
