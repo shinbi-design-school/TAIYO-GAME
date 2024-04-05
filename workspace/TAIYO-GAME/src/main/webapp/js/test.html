@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../../../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>三択問題</title>
 </head>
 
 <body class="body">
-    <p id="remainingKeys">鍵の本数: 8</p>
+    <p id="remainingKeys">鍵の本数: 8</p> <!--ここの数字も remainingKeysと合わせてね-->
     <div id="quiz-container">
         <h2 id="question"></h2>
+        <!--ボタンの機構-->
         <div id="options">
             <button onclick="checkAnswer('A')" class="sentaku">A</button>
             <button onclick="checkAnswer('B')" class="sentaku">B</button>
@@ -21,27 +22,38 @@
     </div>
 
     <script>
-        const quizData = [
-            ["シンビデザインスクールで開講しているコースはいくつあるか答えよ", "1", "2", "3", "2"],
-            ["ちとせ先生が開講している就職支援の授業名を答えよ", "印象戦略", "印象戦術", "外観主義", "印象戦略"],
-            ["田中先生の下の名前を答えよ", "剛", "相", "聡", "聡"],
-            ["シンビWEBサイトにて紹介されている就職サポートは主に4つ存在する、個別面談、企業説明会、面接対策、残り一つはどれか", "就活指導", "就職指導", "第二印象", "就活指導"],
-            ["Java・Webプログラミング科で習得できると紹介されている資格はJavaプログラミング能力認定試験2級ともう一つあるが、それは次のうちどれか", "基本情報技術者", "WEBクリエーター能力認定試験", "ITパスポート", "WEBクリエーター能力認定試験"],
-            ["シンビデザインスクールの1番近くにあるスーパーの名前を答えよ", "ツルハ", "スギ薬局", "マツモトキヨシ", "ツルハ"],
-            ["シンビデザインスクールのプログラミングの先生の数を答えよ", "5", "10", "6", "5"],
-            ["シンビがインスタで使っているアカウント名を答えよ", "シンビデザインスクール", "SHINBIデザインスクール", "SHINBIデザイン", "SHINBIデザインスクール"],
-            ["シンビデザインスクールにある部活の数を答えよ", "5", "7", "3", "5"],
-            ["シンビデザインスクールの教室の数を答えよ", "4", "3", "6", "6"],
-            ["臼井先生の下の名前を答えよ", "八千代", "美千代", "美咲", "美千代"],
-            ["シンビデザインスクールの校長の名前を答えよ", "佐藤", "床井", "小野", "床井"],
-            ["シンビの目標で、何をサポートする職業訓練校と言っているか", "愛", "希望", "夢", "夢"],
-            ["田中先生のももクロの推しを答えよ", "夏菜子", "彩夏", "詩織", "夏菜子"],
-            ["臼井先生のシンビでの担当を答えよ", "WEBデザイン", "Java", "SQL", "WEBデザイン"],
-            ["田中先生が担当している部活の名前を答えよ", "ダンス部", "発表部", "スピーチ部", "スピーチ部"],
-            ["高野先生が作ろうとしている部活の名前を答えよ", "コード部", "麻雀部", "写真部", "写真部"],
-            ["三大ホルモンのうち目標達成の時に出るものを答えよ", "オキシトシン", "ドーパミン", "セロトニン", "ドーパミン"],
-            ["ちとせ先生が言っていた「ビジネスとは〇〇だ」〇〇に入る言葉を答えよ", "戦略", "価値提供", "印象戦略", "価値提供"],
-        ];
+        const quizData = [];
+        const quizFileURL = '../questions.csv'; // ここに、CSVファイルのURLを記述してください
+
+        // CSVデータを読み込む関数
+        function loadCSV(callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        const lines = xhr.responseText.split('\n').map(line => line.trim());
+                        lines.forEach(line => {
+                            const data = line.split(',');
+                            quizData.push(data);
+                        });
+                        callback();
+                    } else {
+                        console.error('CSVの読み込みに失敗しました');
+                    }
+                }
+            };
+            xhr.open('GET', quizFileURL);
+            xhr.send();
+        }
+
+        // 配列をシャッフルする関数
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
 
         const quizContainer = document.getElementById('quiz-container');
         const questionElement = document.getElementById('question');
@@ -51,24 +63,24 @@
         let currentQuestionIndex = 0;
         let score = 0;
         let wrongAttempts = 0;
-        let remainingKeys = 8; // 鍵の本数の初期数
+        let remainingKeys = 8;
+        let askedQuestions = [];
 
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
+        // CSVデータを読み込んで、クイズを開始する
+        loadCSV(startQuiz);
+
+        function startQuiz() {
+            showQuestion();
         }
 
+        // 残りの鍵の数を更新する関数
         function updateRemainingKeys() {
             document.getElementById('remainingKeys').innerText = '鍵の本数: ' + remainingKeys;
         }
 
-
+        // 問題を表示する関数
         function showQuestion() {
-            const shuffledQuizData = shuffleArray(quizData);
-            const currentQuestion = shuffledQuizData[currentQuestionIndex];
+            const currentQuestion = quizData[currentQuestionIndex];
             questionElement.textContent = currentQuestion[0];
             optionsElement.innerHTML = '';
             for (let i = 1; i <= 3; i++) {
@@ -81,6 +93,7 @@
             }
         }
 
+        // 答えをチェックする関数
         function checkAnswer(answer) {
             const currentQuestion = quizData[currentQuestionIndex];
             const correctAnswer = currentQuestion[4];
@@ -89,7 +102,6 @@
                 score++;
                 alert('正解！');
                 wrongAttempts = 0;
-                remainingKeys--;
             } else {
                 wrongAttempts++;
                 alert('不正解。');
@@ -97,7 +109,7 @@
                 if (wrongAttempts === 3) {
                     wrongAttempts = 0;
                 } else {
-                    return; // 不正解時はこの問題にとどま
+                    return; // 不正解の場合、この問題に留まる
                 }
             }
             currentQuestionIndex++;
@@ -105,28 +117,24 @@
                 showQuestion();
             } else {
                 if (score >= 5) {
-                    window.location.href = '../../../../../../HTML/clear.html';
+                    window.location.href = '../HTML/clear.html';
                 } else {
                     quizContainer.innerHTML = `<h2>クイズ終了！</h2>`;
                 }
             }
 
-            // 問題を回答した場合、鍵の本数を減らす
+            // 間違った選択肢を選んだ場合、残りの鍵の数を更新する
             document.getElementById('options').addEventListener('click', function () {
-               
                 updateRemainingKeys();
-
                 if (remainingKeys <= 0) {
-                    // 鍵が0本になったらメッセージを表示して3秒後にGAMEOVERページにリダイレクト
                     setTimeout(function () {
-                        window.location.href = '../../../../../../HTML/game_over.html';
+                        window.location.href = '../HTML/game_over.html';
                     },/*3000*/); // 3秒後にGAMEOVERページにリダイレクトここの数字変えたらできる。
                 }
             });
         }
-
-        showQuestion();
     </script>
 </body>
 
+</html>
 </html>
