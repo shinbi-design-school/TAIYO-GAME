@@ -14,12 +14,12 @@
     background-position: center 10px;
     background-repeat: no-repeat;
 }
-
 .game_over2{
     color: rgb(169, 26, 26);
-    font-size: 150px;
+    font-size: 110px;
     text-align: center;
 }
+
 
 .clear{
     background-image:url('../images/clear.png');
@@ -115,7 +115,7 @@ p{
 #quiz-container {
     margin: 50px auto;
     max-width: 800px; /* 任意の最大幅に調整 */
-    word-break: break-all;　 /* 文字の折り返し */
+    word-break: break-all; /* 文字の折り返し */
 }
  /* question */
  #options {
