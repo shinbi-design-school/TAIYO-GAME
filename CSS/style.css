@@ -114,6 +114,8 @@ p{
 
 #quiz-container {
     margin: 50px auto;
+    max-width: 800px; /* 任意の最大幅に調整 */
+    word-break: break-all;　 /* 文字の折り返し */
 }
  /* question */
  #options {
@@ -186,7 +188,7 @@ button:hover{
         background-color: #4b0082; /* 暗い紫色 */
         color: #ffd700; /* 金色 */
         border: 2px solid #ffd700; /* 金色の枠線 */
-        border-radius: 25px; /* 角丸 */
+        border-radius: 30px; /* 角丸 */
         cursor: pointer;
         text-transform: uppercase; /* 文字を大文字に */
         letter-spacing: 1px; /* 文字の間隔を広げる */
