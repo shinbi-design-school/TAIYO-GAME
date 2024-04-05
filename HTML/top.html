@@ -14,12 +14,18 @@
     <div id="button-container">
         <button onclick="redirectToPage1()" class="button">迷宮に入る！</button>
     </div>
-
-      
-    <script>
-        function redirectToPage1() {
+   <script>
+    function redirectToPage1() {
+        // 音声ファイルの再生
+        const audio1 = new Audio('../audio/decision.mp3');
+        audio1.play();
+        
+        // 0.5秒後にページを移動
+        setTimeout(() => {
             window.location.href = "rule.html";
-        }
-    </script>
+        }, 500); // 0.5秒 = 500ミリ秒
+    }
+</script>
+
 </body>
 </html>
