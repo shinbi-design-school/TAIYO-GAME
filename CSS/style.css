@@ -116,6 +116,9 @@ p{
     margin: 50px auto;
     max-width: 800px; /* 任意の最大幅に調整 */
     word-break: break-all; /* 文字の折り返し */
+    font-size: 20px;
+    color: rgb(250, 188, 1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
  /* question */
  #options {
