@@ -94,7 +94,7 @@
     }
     
 h1{
-    color: rgb(223, 231, 237);
+    color: white; /* 白に変更 */ 
     margin-top: 150px;
 }
 .rule {
