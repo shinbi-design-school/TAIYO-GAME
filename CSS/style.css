@@ -28,14 +28,24 @@
     background-repeat: no-repeat;
 }
 .clear2{
-    color: yellow;
+    color:yellow;
     font-size: 130px;
     text-align: center;
+    text-shadow:
+      3px 0px 1px rgb(248, 244, 238),
+      0 0 5em rgb(65, 65, 2),
+      0 0 0.5em rgb(233, 192, 58);
 }
+
 .clear3{
     color: yellow;
     font-size: 50px;
     text-align: center;
+    text-shadow:
+      3px 0px 1px rgb(51, 38, 2),
+      0 0 5em rgb(226, 112, 18),
+      0 0 0.5em rgb(233, 192, 58);
+     
 }
 
 .top{
@@ -78,7 +88,7 @@
         background-color: #4b0082; /* 暗い紫 */
         color: #ffd700; /* 金色 */
         border: 2px solid #ffd700; /* 金色の枠線 */
-        border-radius: 25px; /* 角丸 */
+        border-radius: 30px; /* 角丸 */
         cursor: pointer;
         text-transform: uppercase; /* 文字を大文字に */
         letter-spacing: 1px; /* 文字の間隔を広げる */
@@ -99,16 +109,20 @@ h1{
 }
 .rule {
     color: red;
-    font-size: 50px;
+    font-size: 40px;
+    margin-top: 95px;
 }
 p{
     color: white;
+    margin-bottom: 40px;
     font-size: 25px;
     font-weight: 800;
+    line-height: 2;
     text-shadow:
       3px 0px 1px rgb(70, 57, 3),
       0 0 5em rgb(160, 127, 17),
       0 0 0.5em rgb(233, 192, 58);
+     
     
 }
 
@@ -141,7 +155,7 @@ p{
     background-color: #4b0082;
     color: #ffd700;
     border: 2px solid #ffd700;
-    border-radius: 25px;
+    border-radius: 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -172,7 +186,7 @@ button:hover{
      background-color: #4b0082; /* 暗い紫色 */
         color: #ffd700; /* 金色 */
         border: 2px solid #ffd700; /* 金色の枠線 */
-        border-radius: 25px; /* 角丸 */
+        border-radius: 30px; /* 角丸 */
         cursor: pointer;
         text-transform: uppercase; /* 文字を大文字に */
         letter-spacing: 1px; /* 文字の間隔を広げる */
