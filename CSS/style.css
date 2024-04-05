@@ -99,16 +99,20 @@ h1{
 }
 .rule {
     color: red;
-    font-size: 50px;
+    font-size: 40px;
+    margin-top: 95px;
 }
 p{
     color: white;
+    margin-bottom: 40px;
     font-size: 25px;
     font-weight: 800;
+    line-height: 2;
     text-shadow:
       3px 0px 1px rgb(70, 57, 3),
       0 0 5em rgb(160, 127, 17),
       0 0 0.5em rgb(233, 192, 58);
+     
     
 }
 
