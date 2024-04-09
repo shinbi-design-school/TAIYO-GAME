@@ -117,12 +117,12 @@ function checkAnswer(answer) {
 
             if (answer === correctAnswer) {
                 score++;
-                alert('正解！');
+                showModal('正解！');
                 wrongAttempts = 0;
                 currentQuestionIndex++; // 正解したら次の問題に進む
             } else {
                 wrongAttempts++;
-                alert('不正解。');
+                showModal('不正解。');
                 remainingKeys--;
                 updateRemainingKeys(); // 残りの鍵の数を更新
             }
