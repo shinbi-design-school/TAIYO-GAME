@@ -110,23 +110,20 @@
                 score++;
                 alert('正解！');
                 wrongAttempts = 0;
+                currentQuestionIndex++; // 正解したら次の問題に進む
             } else {
                 wrongAttempts++;
                 alert('不正解。');
                 remainingKeys--;
                 updateRemainingKeys(); // 残りの鍵の数を更新
-                return; // 不正解の場合、この問題に留まる
-
             }
-            currentQuestionIndex++;
-            if (currentQuestionIndex < quizData.length && score < 5) {
-                showQuestion();
+
+            if (currentQuestionIndex < quizData.length && score < 10) {
+                showQuestion(); // 次の問題を表示
             } else {
-                if (score >= 5) {
+                if (score >= 10) {
                     window.location.href = '../HTML/clear.html';
-                } else {
-                    quizContainer.innerHTML = `<h2>クイズ終了！</h2>`;
-                }
+                } 
             }
 
             if (remainingKeys <= 0) {
