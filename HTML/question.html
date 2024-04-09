@@ -117,7 +117,7 @@
                 showQuestion();
             } else {
                 if (score >= 5) {
-                    window.location.href = '../../../../../../HTML/clear.html';
+                    window.location.href = '../HTML/clear.html';
                 } else {
                     quizContainer.innerHTML = `<h2>クイズ終了！</h2>`;
                 }
@@ -128,7 +128,7 @@
                 updateRemainingKeys();
                 if (remainingKeys <= 0) {
                     setTimeout(function () {
-                        window.location.href = '../../../../../../HTML/game_over.html';
+                        window.location.href = '../HTML/game_over.html';
                     },/*3000*/); // 3秒後にGAMEOVERページにリダイレクトここの数字変えたらできる。
                 }
             });
