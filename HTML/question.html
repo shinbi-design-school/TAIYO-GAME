@@ -84,14 +84,20 @@
             const currentQuestion = quizData[currentQuestionIndex];
             questionElement.textContent = currentQuestion[0];
             optionsElement.innerHTML = '';
-            for (let i = 1; i <= 3; i++) {
+
+            // 選択肢をシャッフル
+            const options = [currentQuestion[1], currentQuestion[2], currentQuestion[3]];
+            shuffleArray(options);
+
+            // シャッフルされた選択肢をボタンとして表示
+            options.forEach(optionText => {
                 const option = document.createElement('button');
-                option.textContent = currentQuestion[i];
+                option.textContent = optionText;
                 option.onclick = function () {
                     checkAnswer(option.textContent);
                 };
                 optionsElement.appendChild(option);
-            }
+            });
         }
 
         // 答えをチェックする関数
@@ -125,18 +131,14 @@
             }
             
             // 間違った選択肢を選んだ場合、残りの鍵の数を更新する
-            document.getElementById('options').addEventListener('click', function () {
-                updateRemainingKeys();
-                if (remainingKeys <= 0) {
-                    setTimeout(function () {
-                        window.location.href = '../HTML/game_over.html';
-                    },/*3000*/); // 3秒後にGAMEOVERページにリダイレクトここの数字変えたらできる。
-                }
-            });
+            updateRemainingKeys();
+            if (remainingKeys <= 0) {
+                setTimeout(function () {
+                    window.location.href = '../HTML/game_over.html';
+                },/*3000*/); // 3秒後にGAMEOVERページにリダイレクトここの数字変えたらできる。
+            }
         }
     </script>
 </body>
-
-</html>
 
 </html>
