@@ -115,12 +115,8 @@
                 alert('不正解。');
                 remainingKeys--;
                 updateRemainingKeys(); // 残りの鍵の数を更新
+                return; // 不正解の場合、この問題に留まる
 
-                if (wrongAttempts === 3) {
-                    wrongAttempts = 0;
-                } else {
-                    return; // 不正解の場合、この問題に留まる
-                }
             }
             currentQuestionIndex++;
             if (currentQuestionIndex < quizData.length && score < 5) {
