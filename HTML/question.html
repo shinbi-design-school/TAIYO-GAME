@@ -140,16 +140,7 @@ function checkAnswer(answer) {
             }
         }
     
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizData.length && score < 5) {
-        showQuestion();
-    } else {
-        if (score >= 5) {
-            window.location.href = '../HTML/clear.html';
-        } else {
-            quizContainer.innerHTML = `<h2>クイズ終了！</h2>`;
-        }
-    }
+    
 
     if (remainingKeys <= 0) {
         window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト

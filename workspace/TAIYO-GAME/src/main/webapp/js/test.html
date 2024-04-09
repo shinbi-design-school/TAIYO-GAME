@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../../../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <title>三択問題</title>
 </head>
 
 <body class="body">
-    <p id="remainingKeys">鍵の本数: 8</p> <!--ここの数字も remainingKeysと合わせてね-->
+    <p id="remainingKeys">鍵の本数: 5</p> <!--ここの数字も remainingKeysと合わせてね-->
     <div id="quiz-container">
         <h2 id="question"></h2>
         <!--ボタンの機構-->
         <div id="options">
-            <button onclick="checkAnswer('A')" class="sentaku">A</button>
-            <button onclick="checkAnswer('B')" class="sentaku">B</button>
-            <button onclick="checkAnswer('C')" class="sentaku">C</button>
+            <button class="sentaku">A</button>
+            <button class="sentaku">B</button>
+            <button class="sentaku">C</button>
         </div>
         <p id="result"></p>
     </div>
 
     <script>
         const quizData = [];
-        const quizFileURL = '../../../../../../questions.csv'; // ここに、CSVファイルのURLを記述してください
+        const quizFileURL = '../questions.csv'; // ここに、CSVファイルのURLを記述してください
 
         // CSVデータを読み込む関数
         function loadCSV(callback) {
@@ -36,6 +36,7 @@
                             const data = line.split(',');
                             quizData.push(data);
                         });
+                        shuffleArray(quizData); // クイズデータをシャッフルする
                         callback();
                     } else {
                         console.error('CSVの読み込みに失敗しました');
@@ -59,11 +60,12 @@
         const questionElement = document.getElementById('question');
         const optionsElement = document.getElementById('options');
         const resultElement = document.getElementById('result');
+        const remainingKeysElement = document.getElementById('remainingKeys');
 
         let currentQuestionIndex = 0;
         let score = 0;
         let wrongAttempts = 0;
-        let remainingKeys = 8;
+        let remainingKeys = 5;
         let askedQuestions = [];
 
         // CSVデータを読み込んで、クイズを開始する
@@ -75,7 +77,7 @@
 
         // 残りの鍵の数を更新する関数
         function updateRemainingKeys() {
-            document.getElementById('remainingKeys').innerText = '鍵の本数: ' + remainingKeys;
+            remainingKeysElement.innerText = '鍵の本数: ' + remainingKeys;
         }
 
         // 問題を表示する関数
@@ -83,14 +85,20 @@
             const currentQuestion = quizData[currentQuestionIndex];
             questionElement.textContent = currentQuestion[0];
             optionsElement.innerHTML = '';
-            for (let i = 1; i <= 3; i++) {
+
+            // 選択肢をシャッフル
+            const options = [currentQuestion[1], currentQuestion[2], currentQuestion[3]];
+            shuffleArray(options);
+
+            // シャッフルされた選択肢をボタンとして表示
+            options.forEach(optionText => {
                 const option = document.createElement('button');
-                option.textContent = currentQuestion[i];
+                option.textContent = optionText;
                 option.onclick = function () {
                     checkAnswer(option.textContent);
                 };
                 optionsElement.appendChild(option);
-            }
+            });
         }
 
         // 答えをチェックする関数
@@ -106,7 +114,9 @@
                 wrongAttempts++;
                 alert('不正解。');
                 remainingKeys--;
-                if (wrongAttempts === 3) {
+                updateRemainingKeys(); // 残りの鍵の数を更新
+
+                if (wrongAttempts === 0) {
                     wrongAttempts = 0;
                 } else {
                     return; // 不正解の場合、この問題に留まる
@@ -117,25 +127,17 @@
                 showQuestion();
             } else {
                 if (score >= 5) {
-                    window.location.href = '../../../../../../HTML/clear.html';
+                    window.location.href = '../HTML/clear.html';
                 } else {
                     quizContainer.innerHTML = `<h2>クイズ終了！</h2>`;
                 }
             }
-            
-            // 間違った選択肢を選んだ場合、残りの鍵の数を更新する
-            document.getElementById('options').addEventListener('click', function () {
-                updateRemainingKeys();
-                if (remainingKeys <= 0) {
-                    setTimeout(function () {
-                        window.location.href = '../../../../../../HTML/game_over.html';
-                    },/*3000*/); // 3秒後にGAMEOVERページにリダイレクトここの数字変えたらできる。
-                }
-            });
+
+            if (remainingKeys <= 0) {
+                window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
+            }
         }
     </script>
 </body>
-
-</html>
 
 </html>
