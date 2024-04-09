@@ -36,6 +36,7 @@
                             const data = line.split(',');
                             quizData.push(data);
                         });
+                        shuffleArray(quizData); // クイズデータをシャッフルする
                         callback();
                     } else {
                         console.error('CSVの読み込みに失敗しました');
