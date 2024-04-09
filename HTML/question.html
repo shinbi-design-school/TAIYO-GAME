@@ -9,9 +9,9 @@
 </head>
 
 <body class="body">
-    <p id="remainingKeys">鍵の本数: 8</p> <!--ここの数字も remainingKeysと合わせてね-->
+    <p id="remainingKeys">鍵の本数: 5</p> <!--ここの数字も remainingKeysと合わせてね-->
 
-    <!-- モーダルウィンドウ -->
+     <!-- モーダルウィンドウ -->
 <div id="modal" class="modal">
     <div id="modal-content" class="modal-content">
         <p id="modal-text"></p>
@@ -74,7 +74,7 @@
         let currentQuestionIndex = 0;
         let score = 0;
         let wrongAttempts = 0;
-        let remainingKeys = 8;
+        let remainingKeys = 5;
         let askedQuestions = [];
 
         // CSVデータを読み込んで、クイズを開始する
@@ -115,22 +115,31 @@ function checkAnswer(answer) {
     const currentQuestion = quizData[currentQuestionIndex];
     const correctAnswer = currentQuestion[4];
 
-    if (answer === correctAnswer) {
-        score++;
-        showModal('正解！');
-        wrongAttempts = 0;
-    } else {
-        wrongAttempts++;
-        showModal('不正解。');
-        remainingKeys--;
-        updateRemainingKeys(); // 残りの鍵の数を更新
+            if (answer === correctAnswer) {
+                score++;
+                alert('正解！');
+                wrongAttempts = 0;
+                currentQuestionIndex++; // 正解したら次の問題に進む
+            } else {
+                wrongAttempts++;
+                alert('不正解。');
+                remainingKeys--;
+                updateRemainingKeys(); // 残りの鍵の数を更新
+            }
 
-        if (wrongAttempts === 3) {
-            wrongAttempts = 0;
-        } else {
-            return; // 不正解の場合、この問題に留まる
+            if (currentQuestionIndex < quizData.length && score < 10) {
+                showQuestion(); // 次の問題を表示
+            } else {
+                if (score >= 10) {
+                    window.location.href = '../HTML/clear.html';
+                } 
+            }
+
+            if (remainingKeys <= 0) {
+                window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
+            }
         }
-    }
+    
     currentQuestionIndex++;
     if (currentQuestionIndex < quizData.length && score < 5) {
         showQuestion();
@@ -145,7 +154,7 @@ function checkAnswer(answer) {
     if (remainingKeys <= 0) {
         window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
     }
-}
+
 
 // モーダルウィンドウを表示する関数
 function showModal(message) {
