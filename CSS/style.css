@@ -213,3 +213,38 @@ button:hover{
         transition: all 0.3s ease; /* ホバー時のアニメーション */
          
 }
+
+/* モーダルウィンドウ用のスタイル */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 900px;
+    height: 98%;
+    margin-left: 230px;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* 背景を半透明に */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.modal-content {
+    background-color: rgb(227, 238, 129);
+    padding: 20px;
+
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
