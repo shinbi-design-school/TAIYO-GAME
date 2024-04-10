@@ -239,12 +239,12 @@ button:hover{
 }
 
 .modal-close-btn {
-    margin-top: 10px;
-    padding: 5px 10px;
+    margin-top: 20px;
+    padding: 10px 30px;
     border: none;
     background-color: #007bff;
     color: white;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
 }
 #modal-text {
@@ -267,7 +267,7 @@ padding: 20px; /* パディングを追加 */
    
 background-color: rgb(227, 238, 129);
     
-border-radius: 5px;
+border-radius: 10px;
     
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
