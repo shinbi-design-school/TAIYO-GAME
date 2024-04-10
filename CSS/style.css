@@ -257,12 +257,10 @@ button:hover{
 
 .modal-content {
     width: 80%; /* モーダルコンテンツの幅を80%に */
-    max-width: 5500px; /* 最大幅を300pxに制限 */
-    
-
-height: auto; /* 高さを自動調整 */
-    
-   
+    height: 80%;
+    max-width: 500px; /* 最大幅を700pxに制限 */
+    max-height: 300px; /* 最大高さを300pxに制限 */
+  
 padding: 20px; /* パディングを追加 */
     text-align: center; /* テキストを中央揃えに */
 
