@@ -251,10 +251,8 @@ button:hover{
     width: 100%; /* テキストの幅を100%に */
     text-align: center; /* テキストを中央揃えに */
     margin: 0; /* マージンをゼロに */
-    padding: 20px; /* パディングを追加 */
-
- 
-font-size: 30px; /* フォントサイズを調整 */
+    padding: 20px; /* パディングを追加 */    
+    font-size: 30px; /* フォントサイズを調整 */
 }
 
 .modal-content {
