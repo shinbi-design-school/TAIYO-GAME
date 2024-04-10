@@ -110,83 +110,61 @@
             });
         }
 
-   // 答えをチェックする関数
-function checkAnswer(answer) {
-    const currentQuestion = quizData[currentQuestionIndex];
-    const correctAnswer = currentQuestion[4];
+        // 答えをチェックする関数
+        function checkAnswer(answer) {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const correctAnswer = currentQuestion[4];
 
-    if (answer === correctAnswer) {
-        score++;
-        showModal('正解！');
-        wrongAttempts = 0;
-        currentQuestionIndex++; // 正解したら次の問題に進む
-    } else {
-        wrongAttempts++;
-        showModalWithExplanation('不正解。');
-        remainingKeys--;
-        updateRemainingKeys(); // 残りの鍵の数を更新
-    }
-
-    if (currentQuestionIndex < quizData.length && score < 10) {
-        showQuestion(); // 次の問題を表示
-    } else {
-        if (score >= 10) {
-            window.location.href = '../HTML/clear.html';
-        }
-    }
-
-    if (remainingKeys <= 0) {
-        window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
-    }
-}
-
-// モーダルウィンドウを表示する関数（解説付き）
-function showModalWithExplanation(message) {
-    const modal = document.getElementById('modal');
-    const modalText = document.getElementById('modal-text');
-
-    modalText.textContent = message;
-    // CSVファイルから解説を取得する関数を呼び出して、取得した解説をモーダルに表示
-    getExplanationFromCSV(currentQuestionIndex)
-        .then(explanation => {
-            modalText.textContent += '\n' + explanation;
-            modal.style.display = 'flex'; // モーダルウィンドウを表示
-        })
-        .catch(error => {
-            console.error('解説の取得に失敗しました:', error);
-            modal.style.display = 'flex'; // エラーが発生した場合でも、モーダルウィンドウを表示
-        });
-}
-
-// CSVファイルから解説を取得する関数
-function getExplanationFromCSV(index) {
-    // CSVファイルから解説を取得するためのURL（適切なURLに置き換える必要があります）
-    const csvURL = 'path/to/your/explanation.csv';
-    // fetchを使用してCSVファイルを取得し、解説を抽出する処理を追加する
-    return fetch(csvURL)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('HTTP Error ' + response.status);
+            if (answer === correctAnswer) {
+                score++;
+                showModal('正解！');
+                wrongAttempts = 0;
+                currentQuestionIndex++; // 正解したら次の問題に進む
+            } else {
+                wrongAttempts++;
+                showModal('不正解。');
+                remainingKeys--;
+                updateRemainingKeys(); // 残りの鍵の数を更新
             }
-            return response.text();
-        })
-        .then(csvText => {
-            // CSVファイルをパースし、該当する行から解説を抽出する処理を追加する
-            const rows = csvText.split('\n');
-            const explanation = rows[index]; // index番目の行が解説であると仮定
-            return explanation;
-        });
-}
 
-// モーダルウィンドウを非表示にする関数
-function closeModal() {
-    const modal = document.getElementById('modal');
-    modal.style.display = 'none'; // モーダルウィンドウを非表示
-}
+            if (currentQuestionIndex < quizData.length && score < 10) {
+                showQuestion(); // 次の問題を表示
+            } else {
+                if (score >= 10) {
+                    window.location.href = '../HTML/clear.html';
+                }
+            }
 
-// モーダルウィンドウの閉じるボタンにイベントリスナーを追加
-const modalCloseBtn = document.getElementById('modal-close-btn');
-modalCloseBtn.addEventListener('click', closeModal);
+            if (remainingKeys <= 0) {
+                window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
+            }
+        }
+
+
+
+        if (remainingKeys <= 0) {
+            window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
+        }
+
+
+        // モーダルウィンドウを表示する関数
+        function showModal(message) {
+            const modal = document.getElementById('modal');
+            const modalText = document.getElementById('modal-text');
+
+            modalText.textContent = message;
+            modal.style.display = 'flex'; // モーダルウィンドウを表示
+        }
+
+        // モーダルウィンドウを非表示にする関数
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none'; // モーダルウィンドウを非表示
+        }
+
+        // モーダルウィンドウの閉じるボタンにイベントリスナーを追加
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        modalCloseBtn.addEventListener('click', closeModal);
 
     </script>
 </body>
