@@ -75,7 +75,6 @@
         let score = 0;
         let wrongAttempts = 0;
         let remainingKeys = 5;
-        let askedQuestions = [];
 
         // CSVデータを読み込んで、クイズを開始する
         loadCSV(startQuiz);
@@ -139,13 +138,6 @@
                 window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
             }
         }
-
-
-
-        if (remainingKeys <= 0) {
-            window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
-        }
-
 
         // モーダルウィンドウを表示する関数
         function showModal(message) {
