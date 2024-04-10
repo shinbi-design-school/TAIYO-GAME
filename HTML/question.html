@@ -10,14 +10,14 @@
 
 <body class="body">
     <p id="remainingKeys">鍵の本数: 5</p> <!--ここの数字も remainingKeysと合わせてね-->
-    <audio type="audio/mpeg" src="../audio/MusMus-BGM-085.mp3" autoplay ></audio>
-     <!-- モーダルウィンドウ -->
-<div id="modal" class="modal">
-    <div id="modal-content" class="modal-content">
-        <p id="modal-text"></p>
-        <button id="modal-close-btn" class="modal-close-btn">閉じる</button>
+    <audio type="audio/mpeg" src="../audio/MusMus-BGM-085.mp3" autoplay></audio>
+    <!-- モーダルウィンドウ -->
+    <div id="modal" class="modal">
+        <div id="modal-content" class="modal-content">
+            <p id="modal-text"></p>
+            <button id="modal-close-btn" class="modal-close-btn">閉じる</button>
+        </div>
     </div>
-</div>
 
     <div id="quiz-container">
         <h2 id="question"></h2>
@@ -111,9 +111,9 @@
         }
 
         // 答えをチェックする関数
-function checkAnswer(answer) {
-    const currentQuestion = quizData[currentQuestionIndex];
-    const correctAnswer = currentQuestion[4];
+        function checkAnswer(answer) {
+            const currentQuestion = quizData[currentQuestionIndex];
+            const correctAnswer = currentQuestion[4];
 
             if (answer === correctAnswer) {
                 score++;
@@ -132,39 +132,39 @@ function checkAnswer(answer) {
             } else {
                 if (score >= 10) {
                     window.location.href = '../HTML/clear.html';
-                } 
+                }
             }
 
             if (remainingKeys <= 0) {
                 window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
             }
         }
-    
-    
-
-    if (remainingKeys <= 0) {
-        window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
-    }
 
 
-// モーダルウィンドウを表示する関数
-function showModal(message) {
-    const modal = document.getElementById('modal');
-    const modalText = document.getElementById('modal-text');
 
-    modalText.textContent = message;
-    modal.style.display = 'flex'; // モーダルウィンドウを表示
-}
+        if (remainingKeys <= 0) {
+            window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
+        }
 
-// モーダルウィンドウを非表示にする関数
-function closeModal() {
-    const modal = document.getElementById('modal');
-    modal.style.display = 'none'; // モーダルウィンドウを非表示
-}
 
-// モーダルウィンドウの閉じるボタンにイベントリスナーを追加
-const modalCloseBtn = document.getElementById('modal-close-btn');
-modalCloseBtn.addEventListener('click', closeModal);
+        // モーダルウィンドウを表示する関数
+        function showModal(message) {
+            const modal = document.getElementById('modal');
+            const modalText = document.getElementById('modal-text');
+
+            modalText.textContent = message;
+            modal.style.display = 'flex'; // モーダルウィンドウを表示
+        }
+
+        // モーダルウィンドウを非表示にする関数
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none'; // モーダルウィンドウを非表示
+        }
+
+        // モーダルウィンドウの閉じるボタンにイベントリスナーを追加
+        const modalCloseBtn = document.getElementById('modal-close-btn');
+        modalCloseBtn.addEventListener('click', closeModal);
 
     </script>
 </body>
