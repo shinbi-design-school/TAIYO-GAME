@@ -234,7 +234,6 @@ button:hover{
 .modal-content {
     background-color: rgb(227, 238, 129);
     padding: 20px;
-
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -248,3 +247,32 @@ button:hover{
     border-radius: 3px;
     cursor: pointer;
 }
+#modal-text {
+    width: 100%; /* テキストの幅を100%に */
+    text-align: center; /* テキストを中央揃えに */
+    margin: 0; /* マージンをゼロに */
+    padding: 20px; /* パディングを追加 */
+
+ 
+font-size: 30px; /* フォントサイズを調整 */
+}
+
+.modal-content {
+    width: 80%; /* モーダルコンテンツの幅を80%に */
+    max-width: 300px; /* 最大幅を300pxに制限 */
+    
+
+height: auto; /* 高さを自動調整 */
+    
+   
+padding: 20px; /* パディングを追加 */
+    text-align: center; /* テキストを中央揃えに */
+
+   
+background-color: rgb(227, 238, 129);
+    
+border-radius: 5px;
+    
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
