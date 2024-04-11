@@ -73,10 +73,6 @@ body {
     position: relative;
     text-align: center;
     margin-top: 10vh;
-    /* 画面の垂直中央から下に40%移動 */
-    transform: translateY(-50%);
-    margin-right: 80px;
-    /* ボタンを左に80px移動 */
     margin-bottom: 100px;
 }
 
@@ -259,5 +255,5 @@ button:hover {
     color: black;
     text-shadow: none;
     line-height: normal;
-    margin:10px 0;
+    margin: 10px 0;
 }
