@@ -248,7 +248,6 @@ button:hover{
     cursor: pointer;
 }
 #modal-text {
-    width: 100%; /* テキストの幅を100%に */
     text-align: center; /* テキストを中央揃えに */
     margin: 0; /* マージンをゼロに */
     padding: 20px; /* パディングを追加 */    
@@ -261,7 +260,7 @@ button:hover{
     max-width: 500px; /* 最大幅を700pxに制限 */
     max-height: 300px; /* 最大高さを300pxに制限 */
   
-padding: 20px; /* パディングを追加 */
+    padding: 20px; /* パディングを追加 */
     text-align: center; /* テキストを中央揃えに */
 
    
