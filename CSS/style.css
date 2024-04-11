@@ -29,7 +29,7 @@
 }
 .clear2{
     color:yellow;
-    font-size: 130px;
+    font-size: 110px;/*130からホームボタン設置のため調整しました（山口） */
     text-align: center;
     text-shadow:
       3px 0px 1px rgb(248, 244, 238),
@@ -39,7 +39,7 @@
 
 .clear3{
     color: yellow;
-    font-size: 50px;
+    font-size: 30px;/*50からホームボタン設置のため調整しました（山口） */
     text-align: center;
     text-shadow:
       3px 0px 1px rgb(51, 38, 2),
