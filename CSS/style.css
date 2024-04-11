@@ -1,15 +1,15 @@
 .body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image: url('../images/active_door.png');
-    background-size: 1300px;
+    background-image:url('../images/active_door.png');
+    background-size: 1400px;
     background-position: center 10px;
     background-repeat: no-repeat;
 }
 
-.game_over {
-    background-image: url('../images/game_over.png');
-    background-size: 1000px;
+.game_over{
+    background-image:url('../images/game_over.png');
+    background-size: 1400px;
     background-position: center 10px;
     background-repeat: no-repeat;
 }
@@ -21,9 +21,9 @@
 }
 
 
-.clear {
-    background-image: url('../images/clear.png');
-    background-size: 1300px;
+.clear{
+    background-image:url('../images/clear.png');
+    background-size: 1400px;
     background-position: center 10px;
     background-repeat: no-repeat;
 }
