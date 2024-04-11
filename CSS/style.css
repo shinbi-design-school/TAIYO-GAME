@@ -148,7 +148,7 @@ p {
     transition: all 0.3s ease;
 }
 
-#option button:hover {
+#options button:hover {
     background-color: #ffd700;
     /* ホバー時の背景色 */
     color: #4b0082;
@@ -158,6 +158,7 @@ p {
     transform: scale(1.1);
     /* ホバー時の拡大アニメーション */
 }
+
 button:hover {
     background-color: #ffd700;
     /* ホバー時の背景色 */
