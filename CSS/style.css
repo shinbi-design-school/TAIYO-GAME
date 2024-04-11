@@ -196,7 +196,7 @@ button:hover {
 }
 
 /* モーダルウィンドウ用のスタイル */
-.modal {
+#modal {
     display: none;
     position: fixed;
     right: 0;
