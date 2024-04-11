@@ -273,12 +273,11 @@ button:hover {
 .modal {
     display: none;
     position: fixed;
-    top: 0;
-    left: 200;
-    width: 900px;
+    right: 0;
+    left: 0;
+    bottom: 0;
     height: 98%;
-    margin-left: 300px;
-    margin-top: 10px;
+    margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.5);
     /* 背景を半透明に */
     z-index: 1000;
