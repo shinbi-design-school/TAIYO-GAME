@@ -14,7 +14,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.game_over2 {
+.game_over h1 {
     color: rgb(169, 26, 26);
     font-size: 110px;
     text-align: center;
@@ -28,7 +28,7 @@ body {
     background-repeat: no-repeat;
 }
 
-.clear2 {
+.clear h1 {
     color: yellow;
     font-size: 110px;
     /*130からホームボタン設置のため調整しました（山口） */
@@ -39,7 +39,7 @@ body {
         0 0 0.5em rgb(233, 192, 58);
 }
 
-.clear3 {
+.clear p {
     color: yellow;
     font-size: 30px;
     /*50からホームボタン設置のため調整しました（山口） */
@@ -148,6 +148,16 @@ p {
     transition: all 0.3s ease;
 }
 
+#option button:hover {
+    background-color: #ffd700;
+    /* ホバー時の背景色 */
+    color: #4b0082;
+    /* ホバー時の文字色 */
+    border-color: #4b0082;
+    /* ホバー時の枠線 */
+    transform: scale(1.1);
+    /* ホバー時の拡大アニメーション */
+}
 button:hover {
     background-color: #ffd700;
     /* ホバー時の背景色 */
