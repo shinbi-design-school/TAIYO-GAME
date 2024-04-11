@@ -238,9 +238,10 @@ button:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.modal-close-btn {
-    margin-top: 20px;
-    padding: 10px 30px;
+#modal-close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
     border: none;
     background-color: #007bff;
     color: white;
@@ -248,8 +249,6 @@ button:hover{
     cursor: pointer;
 }
 #modal-text {
-    width: 100%; /* テキストの幅を100%に */
-    text-align: center; /* テキストを中央揃えに */
     margin: 0; /* マージンをゼロに */
     padding: 20px; /* パディングを追加 */    
     font-size: 30px; /* フォントサイズを調整 */
