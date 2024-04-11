@@ -1,14 +1,14 @@
 .body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-image:url('../images/active_door.png');
+    background-image: url('../images/active_door.png');
     background-size: 1400px;
     background-position: center 10px;
     background-repeat: no-repeat;
 }
 
-.game_over{
-    background-image:url('../images/game_over.png');
+.game_over {
+    background-image: url('../images/game_over.png');
     background-size: 1400px;
     background-position: center 10px;
     background-repeat: no-repeat;
@@ -21,8 +21,8 @@
 }
 
 
-.clear{
-    background-image:url('../images/clear.png');
+.clear {
+    background-image: url('../images/clear.png');
     background-size: 1400px;
     background-position: center 10px;
     background-repeat: no-repeat;
@@ -58,7 +58,8 @@
     background-repeat: no-repeat;
 }
 
-.top2 {
+
+.top h1 {
     font-size: 85px;
     margin: 50px 100px;
     line-height: 1.2;
@@ -67,17 +68,6 @@
 }
 
 /* top */
-#button-container {
-    position: relative;
-    text-align: center;
-    margin-top: 10vh;
-    /* 画面の垂直中央から下に40%移動 */
-    transform: translateY(-50%);
-    margin-right: 80px;
-    /* ボタンを左に80px移動 */
-    margin-bottom: 100px;
-
-}
 
 .button-container {
     position: relative;
@@ -88,40 +78,6 @@
     margin-right: 80px;
     /* ボタンを左に80px移動 */
     margin-bottom: 100px;
-
-}
-
-#button-container .button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #4b0082;
-    /* 暗い紫 */
-    color: #ffd700;
-    /* 金色 */
-    border: 2px solid #ffd700;
-    /* 金色の枠線 */
-    border-radius: 30px;
-    /* 角丸 */
-    cursor: pointer;
-    text-transform: uppercase;
-    /* 文字を大文字に */
-    letter-spacing: 1px;
-    /* 文字の間隔を広げる */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    /* 影を追加 */
-    transition: all 0.3s ease;
-    /* ホバー時のアニメーション */
-}
-
-.button:hover {
-    background-color: #ffd700;
-    /* ホバー時の背景色 */
-    color: #4b0082;
-    /* ホバー時の文字色 */
-    border-color: #4b0082;
-    /* ホバー時の枠線 */
-    transform: scale(1.1);
-    /* ホバー時の拡大アニメーション */
 }
 
 h1 {
@@ -203,47 +159,6 @@ button:hover {
     /* ホバー時の拡大アニメーション */
 }
 
-#select1 {
-    margin: 65px;
-}
-
-#select2 {
-    margin: 65px;
-}
-
-#select3 {
-    margin: 65px;
-}
-
-/* rule */
-.button2 {
-    padding: 10px 15px;
-    margin: 160px 22px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #4b0082;
-    /* 暗い紫色 */
-    color: #ffd700;
-    /* 金色 */
-    border: 2px solid #ffd700;
-    /* 金色の枠線 */
-    border-radius: 30px;
-    /* 角丸 */
-    cursor: pointer;
-    text-transform: uppercase;
-    /* 文字を大文字に */
-    letter-spacing: 1px;
-    /* 文字の間隔を広げる */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    /* 影を追加 */
-    transition: all 0.3s ease;
-    /* ホバー時のアニメーション */
-}
-
-#goquestion .button2 {
-    margin-top: 10px;
-}
-
 /* game over */
 .button3 {
 
@@ -293,7 +208,6 @@ button:hover {
 }
 
 #modal-close-btn {
-    margin-top: 20px;
     padding: 10px 30px;
     border: none;
     background-color: #007bff;
@@ -307,7 +221,7 @@ button:hover {
     /* テキストを中央揃えに */
     margin: 0;
     /* マージンをゼロに */
-    padding: 20px;
+    padding: 10px;
     /* パディングを追加 */
     font-size: 30px;
     /* フォントサイズを調整 */
@@ -330,3 +244,9 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+#modal-explanation {
+    color: black;
+    text-shadow: none;
+    line-height: normal;
+    margin:10px 0;
+}
