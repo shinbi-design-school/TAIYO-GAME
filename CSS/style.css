@@ -9,6 +9,12 @@ body {
     background-repeat: no-repeat;
 }
 
+.biz-udpmincho-regular {
+    font-family: "BIZ UDPMincho", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 .game_over {
     background-image: url('../images/game_over.png');
     background-size: 1400px;
@@ -129,12 +135,12 @@ p {
 }
 
 #options button {
+    font-family: "BIZ UDPMincho", serif;
+    font-weight: 600;
     flex: 1;
-    /* ボタンの幅を均等に分配 */
-    margin: 0 30px;
-    /* ボタン間のマージン */
+    margin: 150px 20px;
     padding: 20px 20px;
-    font-size: 16px;
+    font-size: 30px;
     cursor: pointer;
     background-color: #4b0082;
     color: #ffd700;
