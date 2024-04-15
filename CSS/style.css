@@ -26,6 +26,7 @@ body {
     color: rgb(169, 26, 26);
     font-size: 110px;
     text-align: center;
+    margin-top: 150px;
 }
 
 
@@ -72,7 +73,8 @@ body {
     margin: 50px 100px;
     line-height: 1.2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;
+    text-align: center;    
+    color: white;
 }
 
 /* top */
@@ -84,12 +86,6 @@ body {
     margin-bottom: 100px;
 }
 
-h1 {
-    color: white;
-    /* 白に変更 */
-    margin-top: 150px;
-}
-
 .rule {
     color: red;
     font-size: 40px;
@@ -97,7 +93,7 @@ h1 {
     padding-top: 20px;
 }
 
-p {
+.ruleText{
     color: white;
     margin-bottom: 40px;
     font-size: 25px;
@@ -107,9 +103,20 @@ p {
         3px 0px 1px rgb(70, 57, 3),
         0 0 5em rgb(160, 127, 17),
         0 0 0.5em rgb(233, 192, 58);
-
-
 }
+
+#remainingKeys{
+    color: white;
+    margin-bottom: 40px;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 2;
+    text-shadow:
+        3px 0px 1px rgb(70, 57, 3),
+        0 0 5em rgb(160, 127, 17),
+        0 0 0.5em rgb(233, 192, 58);
+}
+
 
 #quiz-container {
     margin: 50px auto;
@@ -222,12 +229,18 @@ p {
 
 #modal-text {
     text-align: center;
-    /* テキストを中央揃えに */
     margin: 0;
-    /* マージンをゼロに */
     padding: 10px;
-    /* パディングを追加 */
     font-size: 30px;
+    color: white;
+    margin-bottom: 40px;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 2;
+    text-shadow:
+        3px 0px 1px rgb(70, 57, 3),
+        0 0 5em rgb(160, 127, 17),
+        0 0 0.5em rgb(233, 192, 58);
 }
 
 .modal-content {
@@ -248,6 +261,9 @@ p {
 }
 
 #modal-explanation {
+    font-family: "BIZ UDPMincho", serif;
+    font-weight: 600;
+    font-size: 30px;
     color: black;
     text-shadow: none;
     line-height: normal;
