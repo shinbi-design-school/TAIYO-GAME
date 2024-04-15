@@ -4,26 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Hina+Mincho&family=Yusei+Magic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
     <title>三択問題</title>
 </head>
 
 <body>
     <p id="remainingKeys">鍵の本数: 5</p> <!--ここの数字も remainingKeysと合わせてね-->
-    <audio type="audio/mpeg" src="../audio/MusMus-BGM-085.mp3" autoplay ></audio>
-     <!-- モーダルウィンドウ -->
-<div id="modal">
-    <div id="modal-content" class="modal-content">
-        <p id="modal-text"></p>
-        <p id="modal-explanation"></p> <!-- 解説を追加 -->
-        <button id="modal-close-btn">閉じる</button>
+    <audio type="audio/mpeg" src="../audio/MusMus-BGM-085.mp3" autoplay></audio>
+    <!-- モーダルウィンドウ -->
+    <div id="modal">
+        <div id="modal-content" class="modal-content">
+            <p id="modal-text"></p>
+            <p id="modal-explanation"></p> <!-- 解説を追加 -->
+            <button id="modal-close-btn">閉じる</button>
+        </div>
     </div>
-</div>
 
     <div id="quiz-container">
         <h2 id="question"></h2>
         <!--ボタンの機構-->
-        <div id="options" >
+        <div id="options">
             <button>A</button>
             <button>B</button>
             <button>C</button>
