@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,29 @@
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="icon" href="../images/key2.png">
 </head>
-<body>
-    <audio type="audio/mpeg" src="../audio/MusMus-BGM-173.mp3" autoplay ></audio>
-    <h1 class="rule">ルール説明</h1>
-    <p>このゲームは、鍵でドアを開けるゲームです。<br>あなたのクイズ力を試しましょう！！<br>
-        クイズに正解すれば、そのドアを開けることができますが、<br>間違えると貴重な鍵が一つ消費されてしまいます。<br>
-        鍵を全て使い果たしてしまったら、ゲームオーバーですので、<br>鍵の消費を慎重に考えながらドアを開けてください！</p>
 
-<div id="goquestion">
-    <button onclick="redirectToPage1()" class="button3">問題に進む</button>
-    <script>
-        function redirectToPage1() {
-       // 音声ファイルの再生
-        const audio1 = new Audio('../audio/ruledoor.mp3');
-        audio1.play();
-         setTimeout(() => {
-            window.location.href = "question.html";
-             }, 1500); // 1.5秒
-        }
-    </script>
+<body>
+    <div class="mask">
+        <audio type="audio/mpeg" src="../audio/MusMus-BGM-173.mp3" autoplay></audio>
+        <h1 class="rule">ルール説明</h1>
+        <p>このゲームは、鍵でドアを開けるゲームです。<br>あなたのクイズ力を試しましょう！！<br>
+            クイズに正解すれば、そのドアを開けることができますが、<br>間違えると貴重な鍵が一つ消費されてしまいます。<br>
+            鍵を全て使い果たしてしまったら、ゲームオーバーですので、<br>鍵の消費を慎重に考えながらドアを開けてください！</p>
+
+        <div>
+            <button onclick="redirectToPage1()" class="button3">問題に進む</button>
+            <script>
+                function redirectToPage1() {
+                    // 音声ファイルの再生
+                    const audio1 = new Audio('../audio/ruledoor.mp3');
+                    audio1.play();
+                    setTimeout(() => {
+                        window.location.href = "question.html";
+                    }, 1500); // 1.5秒
+                }
+            </script>
+        </div>
     </div>
 </body>
+
 </html>

@@ -94,6 +94,7 @@ h1 {
     color: red;
     font-size: 40px;
     margin-top: 95px;
+    padding-top: 20px;
 }
 
 p {
@@ -216,6 +217,7 @@ p {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 10%;
 }
 
 #modal-text {
@@ -232,7 +234,7 @@ p {
     width: 80%;
     /* モーダルコンテンツの幅を80%に */
     height: 80%;
-    max-width: 500px;
+    max-width: 1000px;
     /* 最大幅を700pxに制限 */
     max-height: 300px;
     /* 最大高さを300pxに制限 */
@@ -250,4 +252,11 @@ p {
     text-shadow: none;
     line-height: normal;
     margin: 10px 0;
+}
+
+.mask{
+    background-color: rgba(0, 0, 0, 0.501);
+    height: 100%;
+    padding-bottom: 20px;
+    margin-top: 20px;
 }
