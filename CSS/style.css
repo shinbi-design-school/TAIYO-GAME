@@ -73,7 +73,7 @@ body {
     margin: 50px 100px;
     line-height: 1.2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    text-align: center;    
+    text-align: center;
     color: white;
 }
 
@@ -93,7 +93,7 @@ body {
     padding-top: 20px;
 }
 
-.ruleText{
+.ruleText {
     color: white;
     margin-bottom: 40px;
     font-size: 25px;
@@ -105,7 +105,7 @@ body {
         0 0 0.5em rgb(233, 192, 58);
 }
 
-#remainingKeys{
+#remainingKeys {
     color: white;
     margin-bottom: 40px;
     font-size: 25px;
@@ -210,13 +210,6 @@ body {
     align-items: center;
 }
 
-.modal-content {
-    background-color: rgb(227, 238, 129);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
 #modal-close-btn {
     padding: 10px 30px;
     border: none;
@@ -244,20 +237,17 @@ body {
 }
 
 .modal-content {
-    width: 80%;
-    /* モーダルコンテンツの幅を80%に */
+    width: 70%;
     height: 80%;
     max-width: 1000px;
-    /* 最大幅を700pxに制限 */
     max-height: 300px;
-    /* 最大高さを300pxに制限 */
     padding: 20px;
-    /* パディングを追加 */
     text-align: center;
-    /* テキストを中央揃えに */
-    background-color: rgb(227, 238, 129);
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgb(227, 238, 129);
 }
 
 #modal-explanation {
@@ -270,7 +260,7 @@ body {
     margin: 10px 0;
 }
 
-.mask{
+.mask {
     background-color: rgba(0, 0, 0, 0.500);
     max-width: 1000px;
     width: 100%;
