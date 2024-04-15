@@ -71,7 +71,7 @@
 
         const quizContainer = document.getElementById('quiz-container');
         const questionElement = document.getElementById('question');
-        const optionsElement = document.getElementById('options');
+        const optionsElement = document.getElementById('choices');
         const resultElement = document.getElementById('result');
         const remainingKeysElement = document.getElementById('remainingKeys');
 
@@ -100,7 +100,7 @@
 
             // 選択肢をシャッフル
             const options = [currentQuestion[1], currentQuestion[2], currentQuestion[3]];
-            shuffleArray(options);
+            
 
             // シャッフルされた選択肢をボタンとして表示
             options.forEach(optionText => {
