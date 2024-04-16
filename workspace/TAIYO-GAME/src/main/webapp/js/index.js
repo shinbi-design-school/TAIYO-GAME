@@ -23,8 +23,10 @@ function redirectToPage3() {
     window.location.href = "top.html";
 }
 
+//-----question-----//
 const quizData = [];
 const quizFileURL = '../questions.csv'; // ここに、CSVファイルのURLを記述してください
+
 
 // CSVデータを読み込む関数
 function loadCSV(callback) {
@@ -138,6 +140,7 @@ function checkAnswer(answer) {
     }
 }
 
+//-----modal-----//
 // モーダルウィンドウを表示する関数
 function showModal(message, explanation) {
     const modal = document.getElementById('modal');
