@@ -193,10 +193,10 @@ body {
     height: 98%;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.5);
-    /* 背景を半透明に */
     z-index: 1000;
     justify-content: center;
     align-items: center;
+    max-width: 1300px;
 }
 
 #modal-close-btn {
@@ -210,19 +210,16 @@ body {
 }
 
 #modal-text {
+    font-family: "Kosugi", sans-serif;
+    font-style: normal;
     text-align: center;
     margin: 0;
     padding: 10px;
-    font-size: 30px;
-    color: white;
-    margin-bottom: 40px;
-    font-size: 25px;
-    font-weight: 800;
+    color: rgb(255, 0, 0);
+    font-size: 35px;
+    font-weight: 200;
     line-height: 2;
-    text-shadow:
-        3px 0px 1px rgb(70, 57, 3),
-        0 0 5em rgb(160, 127, 17),
-        0 0 0.5em rgb(233, 192, 58);
+    -webkit-text-stroke: 1px #000;
 }
 
 .modal-content {
@@ -240,13 +237,13 @@ body {
 }
 
 #modal-explanation {
-    font-family: "BIZ UDPMincho", serif;
     font-weight: 600;
     font-size: 30px;
     color: black;
     text-shadow: none;
-    line-height: normal;
+    line-height:0%;
     margin: 10px 0;
+    /* text-align:justify */
 }
 
 .mask {

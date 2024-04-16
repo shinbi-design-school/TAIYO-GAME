@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Hina+Mincho&family=Yusei+Magic&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Hina+Mincho&family=Yusei+Magic&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../CSS/style.css">
     <title>三択問題</title>
 </head>
@@ -126,7 +132,7 @@
                 currentQuestionIndex++; // 正解したら次の問題に進む
             } else {
                 wrongAttempts++;
-                showModal('不正解。');
+                showModal('不正解');
                 remainingKeys--;
                 updateRemainingKeys(); // 残りの鍵の数を更新
             }
