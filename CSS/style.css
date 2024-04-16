@@ -208,20 +208,7 @@ body {
 }
 
 #modal-close-btn {
-    margin-top: 10%;
-    font-family: "BIZ UDPMincho", serif;
-    font-weight: 600;
-    padding: 15px 30px;
-    font-size: 25px;
-    background-color: #4b0082;
-    color: #ffd700;
-    border: 2px solid #ffd700;
-    border-radius: 30px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    margin-top: 5%;
 }
 
 #modal-text {
