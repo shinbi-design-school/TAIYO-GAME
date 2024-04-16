@@ -104,13 +104,15 @@ body {
         0 0 5em rgb(160, 127, 17),
         0 0 0.5em rgb(233, 192, 58);
 }
+.key-icon{
+    width: 30px;
+}
 
 #remainingKeys {
     color: white;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     font-size: 25px;
     font-weight: 800;
-    line-height: 2;
     text-shadow:
         3px 0px 1px rgb(70, 57, 3),
         0 0 5em rgb(160, 127, 17),
@@ -119,22 +121,24 @@ body {
 
 
 #quiz-container {
-    margin: 50px auto;
-    max-width: 800px;
-    /* 任意の最大幅に調整 */
-    word-break: break-all;
-    /* 文字の折り返し */
-    font-size: 20px;
-    color: rgb(84, 25, 21);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+    max-width: 920px;
+    border-right: 4px solid #333;
+    border-bottom: 4px solid #333;
+    border-radius: 30px;
+    background-image: linear-gradient(-45deg, #4b0082 0%, #5f0195 20%, #6503bb 34%, rgb(126, 92, 181) 53%, #4b0082 100%);
 }
 
 /* question */
-#question{
+#question {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     padding: 30px;
-    background-color: #c5cf328a;
-
+    color: #fbd500;
+    font-size: 30px;
+    word-break: break-all;
 }
+
+
 #choices {
     display: flex;
     justify-content: center;
@@ -144,7 +148,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 700px;
-    /* 解答ボタンの幅を固定 */
 }
 
 #choices button {
@@ -153,7 +156,7 @@ body {
     flex: 1;
     margin: 120px 20px;
     padding: 20px 20px;
-    font-size: 22px;
+    font-size: 25px;
     cursor: pointer;
     background-color: #4b0082;
     color: #ffd700;
@@ -165,7 +168,8 @@ body {
     transition: all 0.3s ease;
 }
 
-.button:hover,#choices button:hover{
+.button:hover,
+#choices button:hover {
     background-color: #ffd700;
     color: #4b0082;
     border-color: #4b0082;
@@ -205,13 +209,20 @@ body {
 }
 
 #modal-close-btn {
-    padding: 10px 30px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
     margin-top: 10%;
+    font-family: "BIZ UDPMincho", serif;
+    font-weight: 600;
+    padding: 15px 30px;
+    font-size: 25px;
+    background-color: #4b0082;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
 }
 
 #modal-text {

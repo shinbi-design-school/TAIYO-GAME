@@ -77,7 +77,7 @@ function startQuiz() {
 
 // 残りの鍵の数を更新する関数
 function updateRemainingKeys() {
-    remainingKeysElement.innerText = '鍵の本数: ' + remainingKeys;
+    remainingKeysElement.innerHTML = "<img src='../../../../../../images/key_color.png' class='key-icon'> ✖ " + remainingKeys;
 }
 
 function shuffleOptions() {
