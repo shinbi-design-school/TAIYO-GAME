@@ -18,17 +18,8 @@
             鍵を全て使い果たしてしまったら、ゲームオーバーですので、<br>鍵の消費を慎重に考えながらドアを開けてください！</p>
 
         <div>
-            <button onclick="redirectToPage1()" class="button">問題に進む</button>
-            <script>
-                function redirectToPage1() {
-                    // 音声ファイルの再生
-                    const audio1 = new Audio('../audio/ruledoor.mp3');
-                    audio1.play();
-                    setTimeout(() => {
-                        window.location.href = "question.html";
-                    }, 1500); // 1.5秒
-                }
-            </script>
+            <button onclick="redirectToPage2()" class="button">問題に進む</button>
+            <script src="../workspace/TAIYO-GAME/src/main/webapp/js/index.js"></script>
         </div>
     </div>
 </body>
