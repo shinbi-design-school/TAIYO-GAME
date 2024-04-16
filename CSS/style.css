@@ -125,11 +125,16 @@ body {
     word-break: break-all;
     /* 文字の折り返し */
     font-size: 20px;
-    color: rgb(250, 188, 1);
+    color: rgb(84, 25, 21);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* question */
+#question{
+    padding: 30px;
+    background-color: #c5cf328a;
+
+}
 #choices {
     display: flex;
     justify-content: center;
