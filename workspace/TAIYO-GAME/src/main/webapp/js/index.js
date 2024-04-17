@@ -121,7 +121,7 @@ function checkAnswer(answer) {
         currentQuestionIndex++;
         if (score >= 10) {
             clear();
-        }// 正解したら次の問題に進む
+        }
     } else {
         showModal('不正解');
         remainingKeys--;
