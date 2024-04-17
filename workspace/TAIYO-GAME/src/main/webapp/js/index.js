@@ -67,8 +67,7 @@ const remainingKeysElement = document.getElementById('remainingKeys');
 
 let currentQuestionIndex = 0;
 let score = 0;
-let wrongAttempts = 0;
-let remainingKeys = 5;
+let remainingKeys = 10;
 
 // CSVデータを読み込んで、クイズを開始する
 loadCSV(startQuiz);
@@ -119,7 +118,6 @@ function checkAnswer(answer) {
     if (answer === correctAnswer) {
         score++;
         showModal('正解！', explanation); // 解説をモーダルに表示
-        wrongAttempts = 0;
         currentQuestionIndex++; // 正解したら次の問題に進む
     } else {
         showModal('不正解');
@@ -128,15 +126,16 @@ function checkAnswer(answer) {
     }
 
     if (currentQuestionIndex < quizData.length && score < 10) {
-        showQuestion(); // 次の問題を表示
+        showQuestion();
+         // 次の問題を表示
     } else {
         if (score >= 10) {
-            window.location.href = '../HTML/clear.html';
+            clear();
         }
     }
 
     if (remainingKeys <= 0) {
-        window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
+        gameOver();
     }
 }
 
@@ -166,3 +165,19 @@ function closeModal() {
 // モーダルウィンドウの閉じるボタンにイベントリスナーを追加
 const modalCloseBtn = document.getElementById('modal-close-btn');
 modalCloseBtn.addEventListener('click', closeModal);
+
+//clearに飛ぶ機能
+function clear() {
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    modalCloseBtn.addEventListener('click', function () {
+        window.location.href = '../HTML/clear.html';
+    });
+}
+
+//GAMEOVERに飛ぶ機能
+function gameOver(){
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    modalCloseBtn.addEventListener('click', function () {
+        window.location.href = '../HTML/game_over.html';
+    });
+}
