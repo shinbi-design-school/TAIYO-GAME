@@ -66,7 +66,7 @@ const resultElement = document.getElementById('result');
 const remainingKeysElement = document.getElementById('remainingKeys');
 
 let currentQuestionIndex = 0;
-let score = 0;
+let score = 8;
 let remainingKeys = 10;
 
 // CSVデータを読み込んで、クイズを開始する
@@ -118,26 +118,28 @@ function checkAnswer(answer) {
     if (answer === correctAnswer) {
         score++;
         showModal('正解！', explanation); // 解説をモーダルに表示
-        currentQuestionIndex++; // 正解したら次の問題に進む
+        currentQuestionIndex++;
+        if (score >= 10) {
+            clear();
+        }// 正解したら次の問題に進む
     } else {
         showModal('不正解');
         remainingKeys--;
-        updateRemainingKeys(); // 残りの鍵の数を更新
-    }
-
-    if (currentQuestionIndex < quizData.length && score < 10) {
-        showQuestion();
-         // 次の問題を表示
-    } else {
-        if (score >= 10) {
-            clear();
+        updateRemainingKeys();
+        if (remainingKeys <= 0) {
+            gameOver();
         }
     }
-
-    if (remainingKeys <= 0) {
-        gameOver();
-    }
 }
+// モーダルウィンドウの閉じるボタンにイベントリスナーを追加
+const modalCloseBtn1 = document.getElementById('modal-close-btn');
+modalCloseBtn1.addEventListener('click', function () {
+    closeModal();
+    // 正解の場合のみ次の問題に進む
+    if (currentQuestionIndex < quizData.length && score < 10) {
+        showQuestion();
+    }
+});
 
 //-----modal-----//
 // モーダルウィンドウを表示する関数
@@ -175,7 +177,7 @@ function clear() {
 }
 
 //GAMEOVERに飛ぶ機能
-function gameOver(){
+function gameOver() {
     const modalCloseBtn = document.getElementById('modal-close-btn');
     modalCloseBtn.addEventListener('click', function () {
         window.location.href = '../HTML/game_over.html';
