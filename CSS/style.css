@@ -23,13 +23,16 @@ body {
 }
 
 .game_over h1 {
-    color:#ffd700; /* 文字色変更しました(大久保) */
-    font-size: 100px; /* 文字サイズ変更しました(大久保) */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* 太字のフォントを指定 */
+    font-size: 150px;
+    color: white;
     margin-top: 150px;
     text-align: center;
-    text-shadow: 5px 5px 5px black; /*文字に影をつけました(大久保)*/
-    line-height: 1.5em; /* 行間設定しました(大久保) */
+    text-shadow: 5px 5px 5px black;
+    line-height: 1.5em;
+    -webkit-text-stroke: 1px red;
 }
+
 
 
 .clear {
