@@ -4,140 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Hina+Mincho&family=Yusei+Magic&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../../../../CSS/style.css">
     <title>三択問題</title>
 </head>
 
-<body class="body">
-    <p id="remainingKeys">鍵の本数: 5</p> <!--ここの数字も remainingKeysと合わせてね-->
+<body>
+    <p id="remainingKeys"><img class="key-icon"src="../../../../../../images/key_color.png"> ✖ 5</p> <!--ここの数字も remainingKeysと合わせてね-->
+    <audio type="audio/mpeg" src="../../../../../../audio/MusMus-BGM-085.mp3" autoplay></audio>
+    <!-- モーダルウィンドウ -->
+    <div id="modal">
+        <div class="modal-content">
+            <p id="modal-text"></p>
+            <p id="modal-explanation"></p> <!-- 解説を追加 -->
+            <button id="modal-close-btn"class="button">閉じる</button>
+        </div>
+    </div>
+
     <div id="quiz-container">
         <h2 id="question"></h2>
         <!--ボタンの機構-->
-        <div id="options">
-            <button class="sentaku">A</button>
-            <button class="sentaku">B</button>
-            <button class="sentaku">C</button>
+        <div id="choices">
+            <button>A</button>
+            <button>B</button>
+            <button>C</button>
         </div>
         <p id="result"></p>
     </div>
 
-    <script>
-        const quizData = [];
-        const quizFileURL = '../questions.csv'; // ここに、CSVファイルのURLを記述してください
-
-        // CSVデータを読み込む関数
-        function loadCSV(callback) {
-            const xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    if (xhr.status === 200) {
-                        const lines = xhr.responseText.split('\n').map(line => line.trim());
-                        lines.forEach(line => {
-                            const data = line.split(',');
-                            quizData.push(data);
-                        });
-                        shuffleArray(quizData); // クイズデータをシャッフルする
-                        callback();
-                    } else {
-                        console.error('CSVの読み込みに失敗しました');
-                    }
-                }
-            };
-            xhr.open('GET', quizFileURL);
-            xhr.send();
-        }
-
-        // 配列をシャッフルする関数
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        const quizContainer = document.getElementById('quiz-container');
-        const questionElement = document.getElementById('question');
-        const optionsElement = document.getElementById('options');
-        const resultElement = document.getElementById('result');
-        const remainingKeysElement = document.getElementById('remainingKeys');
-
-        let currentQuestionIndex = 0;
-        let score = 0;
-        let wrongAttempts = 0;
-        let remainingKeys = 5;
-        let askedQuestions = [];
-
-        // CSVデータを読み込んで、クイズを開始する
-        loadCSV(startQuiz);
-
-        function startQuiz() {
-            showQuestion();
-        }
-
-        // 残りの鍵の数を更新する関数
-        function updateRemainingKeys() {
-            remainingKeysElement.innerText = '鍵の本数: ' + remainingKeys;
-        }
-
-        // 問題を表示する関数
-        function showQuestion() {
-            const currentQuestion = quizData[currentQuestionIndex];
-            questionElement.textContent = currentQuestion[0];
-            optionsElement.innerHTML = '';
-
-            // 選択肢をシャッフル
-            const options = [currentQuestion[1], currentQuestion[2], currentQuestion[3]];
-            shuffleArray(options);
-
-            // シャッフルされた選択肢をボタンとして表示
-            options.forEach(optionText => {
-                const option = document.createElement('button');
-                option.textContent = optionText;
-                option.onclick = function () {
-                    checkAnswer(option.textContent);
-                };
-                optionsElement.appendChild(option);
-            });
-        }
-
-        // 答えをチェックする関数
-        function checkAnswer(answer) {
-            const currentQuestion = quizData[currentQuestionIndex];
-            const correctAnswer = currentQuestion[4];
-
-            if (answer === correctAnswer) {
-                score++;
-                alert('正解！');
-                wrongAttempts = 0;
-            } else {
-                wrongAttempts++;
-                alert('不正解。');
-                remainingKeys--;
-                updateRemainingKeys(); // 残りの鍵の数を更新
-
-                if (wrongAttempts === 0) {
-                    wrongAttempts = 0;
-                } else {
-                    return; // 不正解の場合、この問題に留まる
-                }
-            }
-            currentQuestionIndex++;
-            if (currentQuestionIndex < quizData.length && score < 5) {
-                showQuestion();
-            } else {
-                if (score >= 5) {
-                    window.location.href = '../HTML/clear.html';
-                } else {
-                    quizContainer.innerHTML = `<h2>クイズ終了！</h2>`;
-                }
-            }
-
-            if (remainingKeys <= 0) {
-                window.location.href = '../HTML/game_over.html'; // すぐにGAMEOVERページにリダイレクト
-            }
-        }
-    </script>
+<script src="../js/index.js"></script>
 </body>
 
 </html>
