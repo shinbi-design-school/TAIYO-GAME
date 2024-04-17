@@ -66,7 +66,7 @@ const resultElement = document.getElementById('result');
 const remainingKeysElement = document.getElementById('remainingKeys');
 
 let currentQuestionIndex = 0;
-let score = 8;
+let score = 0;
 let remainingKeys = 10;
 
 // CSVデータを読み込んで、クイズを開始する
@@ -83,7 +83,7 @@ function updateRemainingKeys() {
 
 function shuffleOptions() {
     const currentQuestion = quizData[currentQuestionIndex];
-    const options = [currentQuestion[1], currentQuestion[2], currentQuestion[3]];
+    const options = [currentQuestion[1],currentQuestion[2],currentQuestion[3]];
     shuffleArray(options);
     // シャッフルされた選択肢をquizDataに反映
     currentQuestion[1] = options[0];
@@ -97,16 +97,19 @@ function showQuestion() {
     questionElement.textContent = currentQuestion[0];
     optionsElement.innerHTML = '';
 
+    // シャッフルされた選択肢を準備
+    const options = [currentQuestion[1], currentQuestion[2], currentQuestion[3]];
+    shuffleArray(options);
 
     // シャッフルされた選択肢をボタンとして表示
-    for (let i = 1; i <= 3; i++) {
+    options.forEach(optionText => {
         const option = document.createElement('button');
-        option.textContent = currentQuestion[i];
+        option.textContent = optionText;
         option.onclick = function () {
             checkAnswer(option.textContent);
         };
         optionsElement.appendChild(option);
-    }
+    });
 }
 
 // 答えをチェックする関数
@@ -163,10 +166,6 @@ function closeModal() {
     const modal = document.getElementById('modal');
     modal.style.display = 'none'; // モーダルウィンドウを非表示
 }
-
-// モーダルウィンドウの閉じるボタンにイベントリスナーを追加
-const modalCloseBtn = document.getElementById('modal-close-btn');
-modalCloseBtn.addEventListener('click', closeModal);
 
 //clearに飛ぶ機能
 function clear() {
