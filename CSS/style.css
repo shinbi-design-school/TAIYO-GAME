@@ -23,10 +23,12 @@ body {
 }
 
 .game_over h1 {
-    color: rgb(169, 26, 26);
-    font-size: 110px;
-    text-align: center;
+    color:#ffd700; /* 文字色変更しました(大久保) */
+    font-size: 100px; /* 文字サイズ変更しました(大久保) */
     margin-top: 150px;
+    text-align: center;
+    text-shadow: 5px 5px 5px black; /*文字に影をつけました(大久保)*/
+    line-height: 1.5em; /* 行間設定しました(大久保) */
 }
 
 
@@ -38,7 +40,7 @@ body {
 }
 
 .clear h1 {
-    color: yellow;
+    color: #ffd700;
     font-size: 110px;
     /*130からホームボタン設置のため調整しました（山口） */
     text-align: center;
@@ -49,15 +51,15 @@ body {
 }
 
 .clear p {
-    color: yellow;
-    font-size: 30px;
-    /*50からホームボタン設置のため調整しました（山口） */
+    color: #ffd700; /* yellowから変更しました(大久保) */
+    font-size: 40px; /* 30pxから40pxに変更しました(大久保) */
     text-align: center;
     text-shadow:
         3px 0px 1px rgb(51, 38, 2),
         0 0 5em rgb(226, 112, 18),
         0 0 0.5em rgb(233, 192, 58);
-
+    line-height: 1.5em; /* 行間設定しました（大久保） */
+    background-color: #2a0157c2; /* 背景色設定…不要でしたら削除してください。*/
 }
 
 .top {
