@@ -197,7 +197,7 @@ body {
     }
 
 
-/* モーダルウィンドウ用のスタイ */
+/* モーダルウィンドウ用のスタイル */
 #modal {
     display: none;
     position: fixed;
