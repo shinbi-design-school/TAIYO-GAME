@@ -66,7 +66,7 @@ const resultElement = document.getElementById('result');
 const remainingKeysElement = document.getElementById('remainingKeys');
 
 let currentQuestionIndex = 0;
-let score = 8;
+let score = 0;
 let remainingKeys = 10;
 
 // CSVデータを読み込んで、クイズを開始する
