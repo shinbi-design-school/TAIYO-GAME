@@ -64,10 +64,12 @@ const questionElement = document.getElementById('question');
 const optionsElement = document.getElementById('choices');
 const resultElement = document.getElementById('result');
 const remainingKeysElement = document.getElementById('remainingKeys');
+const remainingCollectElement = document.getElementById('collectCounter');
 
 let currentQuestionIndex = 0;
 let score = 0;
 let remainingKeys = 10;
+let remainingCollects = 0;
 
 // CSVデータを読み込んで、クイズを開始する
 loadCSV(startQuiz);
@@ -79,6 +81,10 @@ function startQuiz() {
 // 残りの鍵の数を更新する関数
 function updateRemainingKeys() {
     remainingKeysElement.innerHTML = "<img src='../../../../../../images/key_color.png' class='key-icon'> ✖ " + remainingKeys;
+}
+
+function updateRemainingCollects() {
+    remainingCollectElement.innerHTML = "正解数："+ remainingCollects + " /10";
 }
 
 function shuffleOptions() {
@@ -122,6 +128,8 @@ function checkAnswer(answer) {
         score++;
         showModal('正解！', explanation); // 解説をモーダルに表示
         currentQuestionIndex++;
+        remainingCollects++;
+        updateRemainingCollects()
         if (score >= 10) {
             clear();
         }
