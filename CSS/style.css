@@ -61,7 +61,7 @@ body {
         0 0 5em rgb(226, 112, 18),
         0 0 0.5em rgb(233, 192, 58);
     line-height: 1.5em; /* 行間設定しました（大久保） */
-    background-color: #2a0157c2; /* 背景色設定…不要でしたら削除してください。*/
+    background-color: #2a0157c2; /* 背景色設定…不要でしたら削除してください*/
 }
 
 .top {
@@ -134,9 +134,9 @@ body {
 
 /* question */
 #question {
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 2px #d1bb3e;
     padding: 30px;
-    color: #ebeae2;
+    color: #000;
     font-size: 30px;
     word-break: break-all;
     line-height: 1.3;
@@ -187,7 +187,7 @@ body {
         font-size: 25px;
         background-color: #2a0157;
         color: #e8c824;
-        border: 3px solid #ffd700;
+        border: 2px solid #ffd700;
         border-radius: 30px;
         cursor: pointer;
         text-transform: uppercase;
