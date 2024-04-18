@@ -61,7 +61,7 @@ body {
         0 0 5em rgb(226, 112, 18),
         0 0 0.5em rgb(233, 192, 58);
     line-height: 1.5em; /* 行間設定しました（大久保） */
-    background-color: #2a0157c2; /* 背景色設定…不要でしたら削除してください*/
+    background-color: #2a0157c2; /* 背景色設定…不要でしたら削除してください。*/
 }
 
 .top {
@@ -115,12 +115,9 @@ body {
 #remainingKeys {
     color: white;
     margin-bottom: 10px;
-    font-size: 25px;
+    font-size: 28px;
     font-weight: 800;
-    text-shadow:
-        3px 0px 1px rgb(70, 57, 3),
-        0 0 5em rgb(160, 127, 17),
-        0 0 0.5em rgb(233, 192, 58);
+    text-shadow: 3px 0px 1px rgb(70, 57, 3), 0 0 5em rgb(160, 127, 17), 0 0 0.5em rgb(233, 192, 58);
 }
 
 
@@ -187,7 +184,7 @@ body {
         font-size: 25px;
         background-color: #2a0157;
         color: #e8c824;
-        border: 2px solid #ffd700;
+        border: 3px solid #ffd700;
         border-radius: 30px;
         cursor: pointer;
         text-transform: uppercase;
@@ -262,4 +259,11 @@ body {
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#collectCounter{
+    color: rgb(238 233 226);
+    font-size: 25px;
+    font-weight: 800;
+    text-shadow: 3px 0px 1px rgb(70, 57, 3), 0 0 5em rgb(51, 38, 2), 0 0 0.5em #000;
 }
