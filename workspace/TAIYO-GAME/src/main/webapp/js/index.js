@@ -70,6 +70,8 @@ let currentQuestionIndex = 0;
 let score = 0;
 let remainingKeys = 10;
 let remainingCollects = 0;
+let shuffled = false;
+let options = [];
 
 // CSVデータを読み込んで、クイズを開始する
 loadCSV(startQuiz);
@@ -87,16 +89,6 @@ function updateRemainingCollects() {
     remainingCollectElement.innerHTML = "正解数："+ remainingCollects + " /10";
 }
 
-function shuffleOptions() {
-    const currentQuestion = quizData[currentQuestionIndex];
-    const options = [currentQuestion[1],currentQuestion[2],currentQuestion[3]];
-    shuffleArray(options);
-    // シャッフルされた選択肢をquizDataに反映
-    currentQuestion[1] = options[0];
-    currentQuestion[2] = options[1];
-    currentQuestion[3] = options[2];
-}
-
 // 問題を表示する関数
 function showQuestion() {
     const currentQuestion = quizData[currentQuestionIndex];
@@ -104,8 +96,13 @@ function showQuestion() {
     optionsElement.innerHTML = '';
 
     // シャッフルされた選択肢を準備
-    const options = [currentQuestion[1], currentQuestion[2], currentQuestion[3]];
-    shuffleArray(options);
+    let options = [currentQuestion[1], currentQuestion[2], currentQuestion[3]];
+
+    // シャッフルが行われていない場合のみシャッフルを行う
+    if (!shuffled) {
+        shuffleArray(options);
+        shuffled = true; // シャッフル済みフラグを立てる
+    }
 
     // シャッフルされた選択肢をボタンとして表示
     options.forEach(optionText => {
