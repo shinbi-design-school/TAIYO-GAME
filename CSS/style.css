@@ -91,10 +91,10 @@ body {
 }
 
 .rule {
-    color: red;
-    font-size: 40px;
-    margin-top: 95px;
-    padding-top: 20px;
+        color: #ffd238;
+        font-size: 40px;
+        margin-top: 95px;
+        padding-top: 20px;
 }
 
 .ruleText {
