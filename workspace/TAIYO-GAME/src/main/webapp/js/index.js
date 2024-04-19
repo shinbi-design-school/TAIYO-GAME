@@ -120,16 +120,20 @@ function checkAnswer(answer) {
     const currentQuestion = quizData[currentQuestionIndex];
     const correctAnswer = currentQuestion[4];
     const explanation = currentQuestion[5]; // 解説を取得
+    const correct = new Audio('../audio/correct.mp3');
+    const lncorrect = new Audio('../audio/lncorrect.mp3');
 
     if (answer === correctAnswer) {
         score++;
         showModal('正解！', explanation); // 解説をモーダルに表示
         currentQuestionIndex++;
         remainingCollects++;
-        updateRemainingCollects()
+        updateRemainingCollects();
         if (score >= 10) {
             clear();
         }
+        correct.currentTime = 0;
+        correct.play();
     } else {
         showModal('不正解');
         remainingKeys--;
@@ -137,6 +141,8 @@ function checkAnswer(answer) {
         if (remainingKeys <= 0) {
             gameOver();
         }
+        lncorrect.currentTime = 0;
+        lncorrect.play();
     }
 }
 // モーダルウィンドウの閉じるボタンにイベントリスナーを追加
