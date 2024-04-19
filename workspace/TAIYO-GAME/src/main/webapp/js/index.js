@@ -96,10 +96,11 @@ function showQuestion() {
     optionsElement.innerHTML = '';
 
     // シャッフルされた選択肢を準備
-    let options = [currentQuestion[1], currentQuestion[2], currentQuestion[3]];
+    
 
     // シャッフルが行われていない場合のみシャッフルを行う
     if (!shuffled) {
+        options = [currentQuestion[1], currentQuestion[2], currentQuestion[3]];
         shuffleArray(options);
         shuffled = true; // シャッフル済みフラグを立てる
     }
@@ -132,12 +133,14 @@ function checkAnswer(answer) {
         if (score >= 10) {
             clear();
         }
+        shuffled = false;
         correct.currentTime = 0;
         correct.play();
     } else {
         showModal('不正解');
         remainingKeys--;
         updateRemainingKeys();
+        shuffled = true;
         if (remainingKeys <= 0) {
             gameOver();
         }
